@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const UnsecuredWifi = () => {
+const Intro1 = () => {
   return (
     <div>
       <h1>Introduction to Insecure WiFi</h1>
@@ -15,4 +15,4 @@ const UnsecuredWifi = () => {
   );
 };
 
-export default Intro;
+export default Intro1; // Use Intro instead of UnsecuredWifi
