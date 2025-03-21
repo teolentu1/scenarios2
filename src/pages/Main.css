@@ -1,0 +1,70 @@
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    background-color: #003366;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #00aaff;
+  }
+  
+  /* Main Content */
+  .main-container {
+    text-align: center;
+    padding-top: 80px;
+  }
+  
+  .main-content {
+    margin-top: 50px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: white;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: auto;
+    color: #00c3ff;
+  }
+  
+  /* Call-to-Action Button */
+  .cta-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: white;
+    background-color: #0066cc;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+  .cta-button:hover {
+    background-color: #004c99;
+  }
+  
