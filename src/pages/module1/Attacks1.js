@@ -1,10 +1,18 @@
-function Attacks1() {
-    return (
-      <div className="content">
-        <h2>How Hackers Exploit WiFi</h2>
-        <p>Explore common attacks like MITM and Packet Sniffing.</p>
-        <a href="/detection" className="next-button">Next</a>
-      </div>
-    );
-  }
-  export default Attacks;
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Attacks1 = () => {
+  return (
+    <div>
+      <h1>How Hackers Exploit WiFi Networks</h1>
+      <p>Here are some common attacks...</p>
+      
+      {/* Button to navigate to the Detection page */}
+      <Link to="/detection">
+        <button>Next: Detecting Insecure Networks</button>
+      </Link>
+    </div>
+  );
+};
+
+export default Attacks;
