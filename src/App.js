@@ -1,22 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import shieldLogo from './Cybersecurity_Hero.svg'; 
 
 function App() {
   return (
     <div className="App">
+      {/* Navigation Bar */}
+      <nav className="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#modules">Modules</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#settings">Settings</a></li>
+        </ul>
+      </nav>
+
+      {/* Main Content */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="title-container">
+          <img src={shieldLogo} alt="Cybersecurity Shield" className="logo" />
+          <h1>CyberShield</h1>
+        </div>
+        <p>Your gateway to cybersecurity knowledge and protection.</p>
+        <button className="cta-button">Learn More</button>
       </header>
     </div>
   );
