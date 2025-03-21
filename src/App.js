@@ -1,26 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar'; // Navigation bar component
-import Home from './pages/Home'; // Landing page
-import Intro from './pages/Intro'; // Introduction to Insecure WiFi
-import Attacks from './pages/Attacks'; // Attacks on WiFi networks
-import Detection from './pages/Detection'; // Detecting insecure networks
-import Protection from './pages/Protection'; // Best Practices for WiFi Security
-import CaseStudies from './pages/CaseStudies'; // Real-world examples
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Modules from './pages/Modules';
+import PasswordSecurity from './pages/PasswordSecurity';
+import UnsecuredWifi from './pages/UnsecuredWifi';
+import Quizzes from './pages/Quizzes';
+import Login from './pages/Login';
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         {/* Landing Page - Home (No navbar) */}
         <Route path="/" element={<Home />} />
-        
-        {/* Pages with Navbar (all other pages) */}
-        <Route path="/intro" element={<><Navbar /><Intro /></>} />
-        <Route path="/attacks" element={<><Navbar /><Attacks /></>} />
-        <Route path="/detection" element={<><Navbar /><Detection /></>} />
-        <Route path="/protection" element={<><Navbar /><Protection /></>} />
-        <Route path="/case-studies" element={<><Navbar /><CaseStudies /></>} />
+        <Route path="/modules" element={<Modules />} />
+        <Route path="/modules/password-security" element={<PasswordSecurity />} />
+        <Route path="/modules/unsecured-wifi" element={<UnsecuredWifi />} />
+        <Route path="/quizzes" element={<Quizzes />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
