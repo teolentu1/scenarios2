@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import './Quizzes.css';
 
 const Quizzes = () => {
   const [quizData, setQuizData] = useState([]);
   const [userAnswers, setUserAnswers] = useState({});
   const [score, setScore] = useState(null);
 
-  // Fetch quiz data from public folder
+  // Fetch quiz data from the public folder
   useEffect(() => {
     fetch('/passwordSecurity.json')
       .then((response) => response.json())
@@ -18,15 +19,17 @@ const Quizzes = () => {
     setUserAnswers({ ...userAnswers, [questionIndex]: selectedOption });
   };
 
-  // Calculate score
+  // Handle submitting the quiz
   const handleSubmitQuiz = () => {
     let newScore = 0;
+
     quizData.forEach((question, index) => {
       if (userAnswers[index] === question.correctAnswer) {
         newScore++;
       }
     });
-    setScore(newScore);
+
+    setScore(newScore); // Set the final score
   };
 
   // Show loading if quiz data isn't loaded yet
