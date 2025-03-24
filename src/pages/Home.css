@@ -76,6 +76,9 @@ body {
   margin: 0 auto 3rem;
   padding: 2rem;
   position: relative;
+  display: flex;               /* Add this */
+  flex-direction: column;      /* Add this */
+  align-items: center;         /* Add this */
 }
 
 .hero-logo {
