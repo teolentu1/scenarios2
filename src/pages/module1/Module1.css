@@ -1,0 +1,173 @@
+/* Add to your existing Module1.css */
+
+.cyber-hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 3rem;
+  }
+  
+  .wifi-animation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2rem;
+    position: relative;
+    min-width: 240px;
+  }
+  
+  .wifi-animation {
+    position: relative;
+    width: 180px; 
+    height: 180px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .wifi-signal {
+    position: absolute;
+    border: 4px solid var(--cyber-blue);
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: wifi-wave 2s infinite ease-out;
+    opacity: 0;
+    bottom: 0;
+    transform-origin: center bottom;
+  }
+  
+  .signal-1 {
+    width: 60px; 
+    height: 60px; 
+    margin-left: -20px; 
+    animation-delay: 0.2s;
+  }
+  
+  .signal-2 {
+    width: 120px; 
+    height: 120px; 
+    margin-left: -20px; 
+    animation-delay: 0.4s;
+  }
+  
+  .signal-3 {
+    width: 180px;
+    height: 180px; 
+    margin-left: -12px; 
+    animation-delay: 0.6s;
+  }
+  
+  .router-image {
+    width: 240px; 
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.7));
+  }
+  
+  @keyframes wifi-wave {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+      bottom: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+      bottom: 10px; 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cyber-hero-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .wifi-animation-container {
+      margin: 2rem 0 0 0;
+      order: 1;
+    }
+    
+    .cyber-hero {
+      order: 2;
+      text-align: center;
+    }
+    
+    .cyber-subtitle {
+      text-align: left;
+    }
+    
+    .wifi-animation {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .signal-1 {
+      width: 50px;
+      height: 50px;
+      margin-left: -25px;
+    }
+    
+    .signal-2 {
+      width: 100px;
+      height: 100px;
+      margin-left: -50px;
+    }
+    
+    .signal-3 {
+      width: 150px;
+      height: 150px;
+      margin-left: -75px;
+    }
+    
+    .router-image {
+      width: 150px;
+    }
+    
+    @keyframes wifi-wave {
+      100% {
+        bottom: 10px;
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .wifi-animation {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .signal-1 {
+      width: 40px;
+      height: 40px;
+      margin-left: -20px;
+    }
+    
+    .signal-2 {
+      width: 80px;
+      height: 80px;
+      margin-left: -40px;
+    }
+    
+    .signal-3 {
+      width: 120px;
+      height: 120px;
+      margin-left: -60px;
+    }
+    
+    .router-image {
+      width: 120px;
+    }
+    
+    @keyframes wifi-wave {
+      100% {
+        bottom: 80px;
+      }
+    }
+  }
