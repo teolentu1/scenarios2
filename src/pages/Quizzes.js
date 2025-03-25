@@ -9,6 +9,7 @@ const Quizzes = () => {
   const [score, setScore] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false); // Track submission state
 
   useEffect(() => {
     const loadQuizData = async () => {
@@ -20,9 +21,8 @@ const Quizzes = () => {
         const data = await response.json();
         console.log('Loaded quiz data:', data);
 
-        // Normalize array to object with title and questions
         const normalizedData = Array.isArray(data)
-          ? { title: filename.replace('.json', ''), questions: data } // Use filename as title
+          ? { title: filename.replace('.json', ''), questions: data }
           : data;
 
         console.log('Normalized quiz data:', normalizedData);
@@ -38,7 +38,9 @@ const Quizzes = () => {
   }, [filename]);
 
   const handleAnswerSelect = (questionIndex, selectedOption) => {
-    setUserAnswers((prev) => ({ ...prev, [questionIndex]: selectedOption }));
+    if (!isSubmitted) { // Prevent changes after submission
+      setUserAnswers((prev) => ({ ...prev, [questionIndex]: selectedOption }));
+    }
   };
 
   const handleSubmitQuiz = () => {
@@ -50,7 +52,16 @@ const Quizzes = () => {
       }
     });
     setScore(newScore);
-    localStorage.setItem(filename, newScore);
+    setIsSubmitted(true); // Switch to review mode
+
+    // Store result in localStorage
+    const result = {
+      score: newScore,
+      total: quizData.questions.length,
+      answers: userAnswers,
+      timestamp: new Date().toISOString(),
+    };
+    localStorage.setItem(`quizResult_${filename}`, JSON.stringify(result));
   };
 
   console.log('Rendering with quizData:', quizData);
@@ -59,6 +70,32 @@ const Quizzes = () => {
   if (error) return <div>Error: {error}</div>;
   if (!quizData || !quizData.questions) return <div>No quiz data available</div>;
 
+  // Review Page
+  if (isSubmitted) {
+    return (
+      <div className="quiz-container">
+        <h1>{quizData.title} - Review</h1>
+        <h2>Your Score: {score} / {quizData.questions.length}</h2>
+        {quizData.questions.map((question, qIndex) => (
+          <div key={qIndex} className="question-block">
+            <h3>{question.question}</h3>
+            <p>
+              Your Answer: {userAnswers[qIndex] || 'Not answered'}{' '}
+              {userAnswers[qIndex] === question.correctAnswer ? '✅' : '❌'}
+            </p>
+            {userAnswers[qIndex] !== question.correctAnswer && (
+              <p>Correct Answer: {question.correctAnswer}</p>
+            )}
+          </div>
+        ))}
+        <button className="restart-btn" onClick={() => window.location.reload()}>
+          Restart Quiz
+        </button>
+      </div>
+    );
+  }
+
+  // Quiz Page
   return (
     <div className="quiz-container">
       <h1>{quizData.title}</h1>
@@ -81,16 +118,6 @@ const Quizzes = () => {
       <button className="submit-btn" onClick={handleSubmitQuiz}>
         Submit Quiz
       </button>
-      {score !== null && (
-        <div className="quiz-result">
-          <h2>
-            Your Score: {score} / {quizData.questions.length}
-          </h2>
-          <button className="restart-btn" onClick={() => window.location.reload()}>
-            Restart Quiz
-          </button>
-        </div>
-      )}
     </div>
   );
 };
