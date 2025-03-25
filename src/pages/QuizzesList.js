@@ -7,19 +7,16 @@ const QuizzesList = () => {
   const [completedQuizzes, setCompletedQuizzes] = useState({});
 
   useEffect(() => {
-    // Load the list of available quizzes from quizzesList.json
     fetch('/quizzesList.json')
       .then((response) => response.json())
       .then((data) => setQuizzes(data))
       .catch((error) => console.error('Error loading quizzes:', error));
 
-    // Load completed quiz results from localStorage
     const storedResults = {};
     Object.keys(localStorage).forEach((key) => {
       if (key.startsWith('quizResult_')) {
         const filename = key.replace('quizResult_', '');
-        const result = JSON.parse(localStorage.getItem(key));
-        storedResults[filename] = result;
+        storedResults[filename] = JSON.parse(localStorage.getItem(key));
       }
     });
     setCompletedQuizzes(storedResults);
@@ -33,8 +30,10 @@ const QuizzesList = () => {
           const result = completedQuizzes[quiz.filename];
           return (
             <div key={quiz.id} className="quiz-item">
-              <h2>{quiz.title}</h2>
-              <p>{quiz.description}</p>
+              <div>
+                <h2>{quiz.title}</h2>
+                <p>{quiz.description}</p>
+              </div>
               {result ? (
                 <div className="quiz-completed">
                   <p>

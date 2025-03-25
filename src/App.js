@@ -7,6 +7,7 @@ import PasswordSecurity from './pages/PasswordSecurity';
 import UnsecuredWifi from './pages/module1/Intro1';
 import QuizzesList from './pages/QuizzesList';
 import Quizzes from './pages/Quizzes';
+import QuizReview from './pages/QuizReview';
 import Login from './pages/Login';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/modules/unsecured-wifi" element={<UnsecuredWifi />} />
         <Route path="/quizzesList" element={<QuizzesList />} />
         <Route path="/quiz/:filename" element={<Quizzes />} />
+        <Route path="/quiz/:filename/review" element={<QuizReview />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
