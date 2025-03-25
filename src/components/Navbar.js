@@ -26,7 +26,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/quizzes" className="cyber-nav-link">
+            <Link to="/quizzesList" className="cyber-nav-link">
               <span className="link-icon">?</span>
               <span className="link-text">Quizzes</span>
             </Link>

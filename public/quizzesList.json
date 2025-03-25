@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "title": "Password Security Quiz",
+      "filename": "passwordSecurity.json"
+    },
+    {
+      "id": 2,
+      "title": "Intro to Cybersecurity Quiz",
+      "filename": "introCybersecurity.json"
+    },
+    {
+      "id": 3,
+      "title": "Cryptography Basics Quiz",
+      "filename": "cryptographyBasics.json"
+    },
+    {
+      "id": 4,
+      "title": "Ethical Hacking Quiz",
+      "filename":"ethicalHacking.json"
+    }
+  ]

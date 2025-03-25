@@ -1,0 +1,49 @@
+{
+    "id": 4,
+    "title": "Ethical Hacking",
+    "description": "Learn about ethical hacking, its techniques, and its role in improving security.",
+    "totalQuestions": 8,
+    "questions": [
+      {
+        "question": "What is ethical hacking?",
+        "options": ["Hacking without permission", "Identifying vulnerabilities with permission", "Creating malware", "Breaking into systems illegally"],
+        "correctAnswer": "Identifying vulnerabilities with permission"
+      },
+      {
+        "question": "Which tool is commonly used for network penetration testing?",
+        "options": ["Wireshark", "Nmap", "Photoshop", "WordPress"],
+        "correctAnswer": "Nmap"
+      },
+      {
+        "question": "What is a penetration test?",
+        "options": ["Testing for system vulnerabilities", "Creating a firewall", "Encrypting data", "Building a website"],
+        "correctAnswer": "Testing for system vulnerabilities"
+      },
+      {
+        "question": "Which of the following is an example of social engineering?",
+        "options": ["Phishing", "Brute force attack", "SQL injection", "Man-in-the-middle attack"],
+        "correctAnswer": "Phishing"
+      },
+      {
+        "question": "What is a zero-day exploit?",
+        "options": ["An exploit discovered on the same day as the patch release", "An exploit that has no known solution", "An exploit found in outdated software", "An exploit in open-source software"],
+        "correctAnswer": "An exploit that has no known solution"
+      },
+      {
+        "question": "Which of these is a common method to protect against SQL injection?",
+        "options": ["Input validation", "Using firewalls", "Disabling HTTPS", "Storing passwords in plain text"],
+        "correctAnswer": "Input validation"
+      },
+      {
+        "question": "What does a reverse shell do in penetration testing?",
+        "options": ["It sends a signal to the target machine", "It establishes a connection from the target machine back to the attacker", "It encrypts network traffic", "It performs a brute force attack"],
+        "correctAnswer": "It establishes a connection from the target machine back to the attacker"
+      },
+      {
+        "question": "What is the purpose of a vulnerability scanner?",
+        "options": ["To test the strength of passwords", "To detect and report potential security weaknesses", "To manage firewall settings", "To track user activity"],
+        "correctAnswer": "To detect and report potential security weaknesses"
+      }
+    ]
+  }
+  

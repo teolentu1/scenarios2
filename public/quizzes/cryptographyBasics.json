@@ -1,0 +1,34 @@
+{
+    "id": 3,
+    "title": "Cryptography Basics",
+    "description": "Get to know the basic concepts of cryptography and how it secures communications.",
+    "totalQuestions": 5,
+    "questions": [
+      {
+        "question": "What is the purpose of cryptography?",
+        "options": ["Encrypting passwords", "Securing data", "Reducing file sizes", "Monitoring traffic"],
+        "correctAnswer": "Securing data"
+      },
+      {
+        "question": "Which algorithm is used in symmetric encryption?",
+        "options": ["RSA", "AES", "SHA-1", "ECDSA"],
+        "correctAnswer": "AES"
+      },
+      {
+        "question": "Which type of cryptographic key is used in asymmetric encryption?",
+        "options": ["Private key", "Public key", "Both private and public keys", "Hashing key"],
+        "correctAnswer": "Both private and public keys"
+      },
+      {
+        "question": "What does 'SSL' stand for in cryptography?",
+        "options": ["Secure Sockets Layer", "Secure Signing Layer", "Software Security Layer", "System Security Logic"],
+        "correctAnswer": "Secure Sockets Layer"
+      },
+      {
+        "question": "Which hashing algorithm is widely used in digital signatures?",
+        "options": ["MD5", "SHA-256", "AES", "RSA"],
+        "correctAnswer": "SHA-256"
+      }
+    ]
+  }
+  

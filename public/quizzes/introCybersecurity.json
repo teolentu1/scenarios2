@@ -1,0 +1,39 @@
+{
+    "id": 1,
+    "title": "Introduction to Cybersecurity",
+    "description": "Learn the basics of cybersecurity and the importance of securing systems.",
+    "totalQuestions": 6,
+    "questions": [
+      {
+        "question": "What is the primary goal of cybersecurity?",
+        "options": ["Protecting data", "Improving network speed", "Increasing traffic", "Monitoring devices"],
+        "correctAnswer": "Protecting data"
+      },
+      {
+        "question": "Which of the following is a type of malware?",
+        "options": ["Virus", "Router", "Firewall", "Search engine"],
+        "correctAnswer": "Virus"
+      },
+      {
+        "question": "What does CIA stand for in cybersecurity?",
+        "options": ["Central Information Agency", "Confidentiality, Integrity, Availability", "Cybersecurity Incident Authority", "Critical Internet Analysis"],
+        "correctAnswer": "Confidentiality, Integrity, Availability"
+      },
+      {
+        "question": "What is the best method to protect your personal data?",
+        "options": ["Use strong passwords", "Share your data with trusted people", "Click on all links in emails", "Disable your antivirus software"],
+        "correctAnswer": "Use strong passwords"
+      },
+      {
+        "question": "Which of these is an example of social engineering?",
+        "options": ["Phishing", "Encryption", "Firewall configuration", "Password hashing"],
+        "correctAnswer": "Phishing"
+      },
+      {
+        "question": "What is a firewall used for?",
+        "options": ["Blocking viruses", "Preventing unauthorized access", "Encrypting passwords", "Tracking user activity"],
+        "correctAnswer": "Preventing unauthorized access"
+      }
+    ]
+  }
+  
