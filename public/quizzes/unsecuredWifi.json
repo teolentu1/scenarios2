@@ -1,0 +1,57 @@
+{
+    "id": 5,
+    "title": "Unsecured Wi-Fi Network Quiz",
+    "totalQuestions": 5,
+    "questions": [
+      {
+        "question": "What is a primary risk of using an unsecured Wi-Fi network?",
+        "options": [
+          "Faster internet speed",
+          "Data interception by attackers",
+          "Improved signal strength",
+          "Reduced battery usage"
+        ],
+        "correctAnswer": "Data interception by attackers"
+      },
+      {
+        "question": "Which protocol should a secure Wi-Fi network use?",
+        "options": [
+          "WEP",
+          "WPA2 or WPA3",
+          "FTP",
+          "HTTP"
+        ],
+        "correctAnswer": "WPA2 or WPA3"
+      },
+      {
+        "question": "What should you avoid doing on a public Wi-Fi network?",
+        "options": [
+          "Checking the weather",
+          "Streaming music",
+          "Accessing your bank account",
+          "Browsing social media"
+        ],
+        "correctAnswer": "Accessing your bank account"
+      },
+      {
+        "question": "What does a VPN do when using an unsecured Wi-Fi network?",
+        "options": [
+          "Increases connection speed",
+          "Encrypts your data",
+          "Blocks all websites",
+          "Changes your Wi-Fi password"
+        ],
+        "correctAnswer": "Encrypts your data"
+      },
+      {
+        "question": "Why is it dangerous to leave your Wi-Fi router’s default password unchanged?",
+        "options": [
+          "It slows down the network",
+          "Default passwords are easily guessable",
+          "It prevents device connections",
+          "It limits the range"
+        ],
+        "correctAnswer": "Default passwords are easily guessable"
+      }
+    ]
+  }

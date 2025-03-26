@@ -127,6 +127,12 @@
     box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
   }
   
+  .locked-text {
+    font-size: 0.9rem;
+    color: var(--cyber-danger);
+    text-shadow: 0 0 5px rgba(255, 45, 117, 0.3);
+  }
+  
   @media (max-width: 768px) {
     .quiz-list-container {
       padding: 1.5rem;

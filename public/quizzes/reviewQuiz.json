@@ -1,0 +1,68 @@
+{
+    "id": 6,
+    "title": "Review Quiz - Unsecured Wifi and Password Security",
+    "totalQuestions": 6,
+    "dependencies": ["passwordSecurity.json", "unsecuredWifi.json"],
+    "questions": [
+      {
+        "question": "What makes a password strong?",
+        "options": [
+          "Using your name",
+          "A mix of letters, numbers, and symbols",
+          "A short, simple word",
+          "Repeating characters"
+        ],
+        "correctAnswer": "A mix of letters, numbers, and symbols"
+      },
+      {
+        "question": "Why should you avoid using the same password across multiple accounts?",
+        "options": [
+          "It’s harder to remember",
+          "It increases security",
+          "A breach in one account compromises others",
+          "It slows down logins"
+        ],
+        "correctAnswer": "A breach in one account compromises others"
+      },
+      {
+        "question": "What is the safest way to store passwords?",
+        "options": [
+          "In a text file",
+          "On paper",
+          "Using a password manager",
+          "In your email"
+        ],
+        "correctAnswer": "Using a password manager"
+      },
+      {
+        "question": "What is a common risk of connecting to an unsecured Wi-Fi network?",
+        "options": [
+          "Faster downloads",
+          "Man-in-the-middle attacks",
+          "Better signal",
+          "Lower data usage"
+        ],
+        "correctAnswer": "Man-in-the-middle attacks"
+      },
+      {
+        "question": "Which tool can protect your data on public Wi-Fi?",
+        "options": [
+          "Antivirus software",
+          "A VPN",
+          "A firewall",
+          "A strong password"
+        ],
+        "correctAnswer": "A VPN"
+      },
+      {
+        "question": "What should you do if you suspect your Wi-Fi network is compromised?",
+        "options": [
+          "Change the password immediately",
+          "Turn off the router for a day",
+          "Ignore it",
+          "Use it only for browsing"
+        ],
+        "correctAnswer": "Change the password immediately"
+      }
+    ]
+  }

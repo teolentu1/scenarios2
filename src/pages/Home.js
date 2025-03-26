@@ -12,21 +12,66 @@ const tempModules = [
   { id: 4, title: "Ethical Hacking", completed: false },
 ];
 
-const tempQuizzes = [
-  { id: 1, title: "Module 1 Quiz", dueDate: "2023-12-15", completed: true },
-  { id: 2, title: "Module 2 Quiz", dueDate: "2023-12-22", completed: false },
-  { id: 3, title: "Final Assessment", dueDate: "2024-01-10", completed: false },
-];
 
 const Home = () => {
   const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
+  const [quizzes, setQuizzes] = useState([]);
+  const [completedQuizzes, setCompletedQuizzes] = useState({});
+  const [quizDetails, setQuizDetails] = useState({}); 
   
   useEffect(() => {
     const completedCount = tempModules.filter(m => m.completed).length;
     const newProgress = Math.round((completedCount / tempModules.length) * 100);
     setProgress(newProgress);
+
+        // Load quiz list
+        fetch('/quizzesList.json')
+        .then((response) => response.json())
+        .then((data) => {
+          setQuizzes(data);
+          // Fetch details for each quiz
+          data.forEach((quiz) => {
+            fetch(`/quizzes/${quiz.filename}`)
+              .then((res) => res.json())
+              .then((quizData) => {
+                setQuizDetails((prev) => ({
+                  ...prev,
+                  [quiz.filename]: quizData,
+                }));
+              })
+              .catch((error) => console.error(`Error fetching ${quiz.filename}:`, error));
+          });
+        })
+        .catch((error) => console.error('Error loading quizzes:', error));
+  
+      // Load completed quizzes
+      const storedResults = {};
+      Object.keys(localStorage).forEach((key) => {
+        if (key.startsWith('quizResult_')) {
+          const filename = key.replace('quizResult_', '');
+          storedResults[filename] = JSON.parse(localStorage.getItem(key));
+        }
+      });
+      setCompletedQuizzes(storedResults);
   }, []);
+
+    // Check if a quiz's dependencies are met
+    const areDependenciesMet = (dependencies) => {
+      if (!dependencies || dependencies.length === 0) return true;
+      return dependencies.every((dep) => completedQuizzes[dep]); 
+    };
+  
+    // Get titles of dependency quizzes
+    const getDependencyTitles = (dependencies) => {
+      if (!dependencies || dependencies.length === 0) return '';
+      return dependencies
+        .map((dep) => {
+          const depQuiz = quizzes.find((q) => q.filename === dep);
+          return depQuiz ? depQuiz.title : dep; 
+        })
+        .join(', ');
+    };
 
   return (
     <div className="cyber-home">
@@ -114,8 +159,8 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Quizzes Card */}
-          <motion.div 
+{/* Quizzes Card */}
+<motion.div 
             className="cyber-card quizzes-card"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -126,21 +171,60 @@ const Home = () => {
               <h2>Security Challenges</h2>
             </div>
             <div className="quiz-list">
-              {tempQuizzes.filter(q => !q.completed).map(quiz => (
-                <motion.div 
-                  key={quiz.id} 
-                  className="quiz-item"
-                  whileHover={{ x: 5 }}
-                >
-                  <div className="quiz-info">
-                    <h3>{quiz.title}</h3>
-                    <p>Locked until: {quiz.dueDate}</p>
-                  </div>
-                  <button className="quiz-button">
-                    Attempt <FaChevronRight />
-                  </button>
-                </motion.div>
-              ))}
+              {quizzes.map((quiz) => {
+                const result = completedQuizzes[quiz.filename];
+                const quizData = quizDetails[quiz.filename];
+                const isUnlocked = quizData ? areDependenciesMet(quizData.dependencies) : false;
+
+                return (
+                  <motion.div 
+                    key={quiz.id} 
+                    className="quiz-item"
+                    whileHover={{ x: 5 }}
+                  >
+                    <div className="quiz-info">
+                      <h3>{quiz.title}</h3>
+                      {result ? (
+                        <p>
+                          Score: {result.score}/{result.total} (
+                          {((result.score / result.total) * 100).toFixed(1)}%)
+                        </p>
+                      ) : quizData ? (
+                        !isUnlocked && (
+                          <p>Locked: Complete {getDependencyTitles(quizData.dependencies)}</p>
+                        )
+                      ) : (
+                        <p>Loading...</p>
+                      )}
+                    </div>
+                    {result ? (
+                      <div className="quiz-actions">
+                        <button 
+                          className="quiz-button review-btn"
+                          onClick={() => navigate(`/quiz/${quiz.filename}/review`)}
+                        >
+                          Review <FaChevronRight />
+                        </button>
+                        <button 
+                          className="quiz-button retake-btn"
+                          onClick={() => navigate(`/quiz/${quiz.filename}`)}
+                        >
+                          Retake <FaChevronRight />
+                        </button>
+                      </div>
+                    ) : quizData ? (
+                      isUnlocked ? (
+                        <button 
+                          className="quiz-button start-btn"
+                          onClick={() => navigate(`/quiz/${quiz.filename}`)}
+                        >
+                          Start <FaChevronRight />
+                        </button>
+                      ) : null
+                    ) : null}
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         </div>
