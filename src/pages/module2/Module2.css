@@ -1,0 +1,402 @@
+/* ------------------------------------------------
+   Color & Font Variables
+--------------------------------------------------- */
+:root {
+  --cyber-blue: #00f3ff;
+  --cyber-purple: #7b2dff;
+  --cyber-dark: #0a0a1a;
+  --cyber-gray: #1a1a2e;
+  --cyber-success: #00ff9d;
+  --cyber-danger: #ff2d75;
+  --font-family: "Orbitron", "Segoe UI", sans-serif;
+}
+
+/* ------------------------------------------------
+   Base Resets
+--------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cyber-dark);
+  color: #fff;
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+/* ------------------------------------------------
+   Wrapper for Module Card
+--------------------------------------------------- */
+.mod-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* ------------------------------------------------
+   Cyber Panel (Template for module pages)
+--------------------------------------------------- */
+.cyber-panel {
+  background: rgba(26, 26, 46, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  max-width: 900px;
+  width: 100%;
+}
+
+.cyber-panel:hover {
+  border-color: rgba(0, 243, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 243, 255, 0.1);
+}
+
+/* ------------------------------------------------
+   Module Card
+--------------------------------------------------- */
+.mod-card {
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------
+   Title (Large Gradient Text)
+--------------------------------------------------- */
+.mod-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+/* ------------------------------------------------
+   Section Headings & Text
+--------------------------------------------------- */
+.mod-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.mod-section:hover {
+  border-left-color: var(--cyber-blue);
+}
+
+.mod-heading {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.mod-text {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ------------------------------------------------
+   Cyber Button (Template Style for navigation)
+--------------------------------------------------- */
+.cyber-btn {
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.cyber-btn:hover {
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.mod-btn {
+  margin-top: 1rem;
+}
+
+/* ------------------------------------------------
+   Password Form & Animation Layout
+--------------------------------------------------- */
+.pwd-form {
+  margin-top: 1rem;
+}
+
+.pwd-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inp-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.pwd-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.toggle-pwd-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.submit-anim-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.anim-inline {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------------------------------------
+   Cyber Submit Button (Distinct from navigation buttons)
+--------------------------------------------------- */
+.cyber-submit-btn {
+  position: relative;
+  margin-top: 1rem;
+  padding: 12px 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--cyber-dark);
+  background: var(--cyber-success);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyber-submit-btn:hover {
+  background: transparent;
+  border-color: var(--cyber-success);
+  color: var(--cyber-success);
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.6);
+}
+
+.cyber-submit-label {
+  position: relative;
+  z-index: 2;
+}
+
+.cyber-submit-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 255, 157, 0) 0%, rgba(0, 255, 157, 0.3) 50%, rgba(0, 255, 157, 0) 100%);
+  background-size: 200% 100%;
+  animation: glowShift 3s infinite linear;
+  z-index: 1;
+}
+
+@keyframes glowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* ------------------------------------------------
+   Feedback Messages
+--------------------------------------------------- */
+.valid-msg {
+  color: var(--cyber-success);
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.invalid-msg {
+  color: var(--cyber-danger);
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.invalid-msg ul {
+  margin-top: 0.5rem;
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* ------------------------------------------------
+   Module Navigation Buttons Container
+--------------------------------------------------- */
+.mod-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-btn {
+  float: right;
+}
+
+/* ------------------------------------------------
+   Module Header Styling
+--------------------------------------------------- */
+.mod-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title-anim {
+  width: 300px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------------------------------------
+   Animation Container Styling
+--------------------------------------------------- */
+.anim-container {
+  width: 100%;
+  margin: 1.5rem 0 2.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(10, 10, 26, 0.6);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease;
+  will-change: transform;
+}
+
+.anim-container:hover {
+  border-color: rgba(0, 243, 255, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 243, 255, 0.15);
+}
+
+.threat-anim {
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+  display: block;
+}
+
+.anim-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(10, 10, 26, 0.7);
+  color: var(--cyber-blue);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.anim-container:hover .anim-hint {
+  opacity: 1;
+}
+
+/* ------------------------------------------------
+   Case Study Section with Animation
+--------------------------------------------------- */
+.mod-section.with-anim {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border-left: 2px solid transparent;
+}
+
+.mod-section.with-anim:hover {
+  background: rgba(0, 243, 255, 0.05);
+  border-left-color: var(--cyber-blue);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sect-content {
+  flex: 3;
+}
+
+.sect-anim {
+  flex: 1;
+  min-width: 120px;
+  max-width: 180px;
+  background: rgba(10, 10, 26, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mod-section.with-anim:hover .sect-anim {
+  border-color: rgba(0, 243, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.case-anim {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .mod-section.with-anim {
+    flex-direction: column;
+  }
+  
+  .sect-anim {
+    width: 178px;
+    height: 178px;
+    margin-top: 1rem;
+  }
+}

@@ -15,6 +15,8 @@ import PasswordSecurity from './pages/PasswordSecurity';
 import Attacks2 from './pages/module2/Attacks2';
 import Protection2 from './pages/module2/Protection2';
 import CaseStudies2 from './pages/module2/CaseStudies2';
+import Intro2 from './pages/module2/Intro2';
+import Summary2 from './pages/module2/Summary2';
 
 function App() {
   return (
@@ -28,10 +30,11 @@ function App() {
         <Route path="/modules/unsecured-wifi/attacks" element={<Attacks1 />} />
         <Route path="/modules/unsecured-wifi/protection" element={<Protection1 />} />
         <Route path="/modules/unsecured-wifi/casestudies" element={<CaseStudies1 />} />
-        <Route path="/modules/password-security" element={<PasswordSecurity />} />
+        <Route path="/modules/password-security" element={<Intro2 />} />
         <Route path="/modules/password-security/attacks" element={<Attacks2 />} />
         <Route path="/modules/password-security/protection" element={<Protection2 />} />
         <Route path="/modules/password-security/casestudies" element={<CaseStudies2 />} />
+        <Route path="/modules/password-security/summary" element={<Summary2 />} />
         <Route path="/quizzesList" element={<QuizzesList />} />
         <Route path="/quiz/:filename" element={<Quizzes />} />
         <Route path="/quiz/:filename/review" element={<QuizReview />} />
