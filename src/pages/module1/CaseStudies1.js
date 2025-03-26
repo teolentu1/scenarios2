@@ -7,4 +7,4 @@ function CaseStudies1() {
       </div>
     );
   }
-  export default CaseStudies;
+  export default CaseStudies1;

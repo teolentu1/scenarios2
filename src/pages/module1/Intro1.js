@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./Module1.css";
-import routerImage from './router.png'; // Make sure this path is correct
+import routerImage from './router.png'; 
 
 const Intro1 = () => {
   return (
@@ -39,7 +39,7 @@ const Intro1 = () => {
           </ul>
         </div>
         
-        <Link to="/attacks">
+        <Link to="/modules/unsecured-wifi/attacks">
           <button className="cyber-button">
             Next: How Hackers Exploit WiFi
           </button>
