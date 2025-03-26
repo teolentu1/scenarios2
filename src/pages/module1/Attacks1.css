@@ -7,6 +7,7 @@
     --cyber-danger: #ff2d75;
   }
   
+  /* Base styles */
   .attacks-page {
     position: relative;
     min-height: 100vh;
@@ -15,6 +16,8 @@
     padding: 2rem;
     font-family: 'Orbitron', 'Segoe UI', sans-serif;
     overflow-x: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .cyber-grid-overlay {
@@ -39,7 +42,7 @@
   }
   
   .header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
     -webkit-background-clip: text;
     background-clip: text;
@@ -52,11 +55,12 @@
     color: rgba(255, 255, 255, 0.7);
   }
   
-  .attack-cards-container {
+  /* Card Grid Layout */
+  .attack-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     position: relative;
     z-index: 2;
   }
@@ -65,9 +69,9 @@
     background: rgba(26, 26, 46, 0.8);
     border-radius: 15px;
     padding: 2rem;
+    min-height: 300px;
     cursor: pointer;
     perspective: 1000px;
-    min-height: 300px;
     transition: all 0.6s ease;
     transform-style: preserve-3d;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -103,6 +107,38 @@
     margin-bottom: 1.5rem;
   }
   
+  .definition {
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+  
+  .examples {
+    margin-top: auto;
+  }
+  
+  .examples h4 {
+    margin-bottom: 0.5rem;
+    color: var(--cyber-blue);
+  }
+  
+  .examples ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .examples li {
+    margin-bottom: 0.3rem;
+    position: relative;
+    padding-left: 1.2rem;
+  }
+  
+  .examples li:before {
+    content: "•";
+    color: var(--cyber-purple);
+    position: absolute;
+    left: 0;
+  }
+  
   .flip-button {
     margin-top: auto;
     align-self: flex-start;
@@ -119,133 +155,17 @@
     background: rgba(0, 243, 255, 0.1);
   }
   
-  .resources {
-    margin-top: 1.5rem;
-  }
-  
-  .resources a {
-    color: var(--cyber-blue);
-    text-decoration: none;
-  }
-  
-  .resources a:hover {
-    text-decoration: underline;
-  }
-  
+  /* Simulation Section */
   .simulation-section {
     position: relative;
     z-index: 2;
-    margin-bottom: 4rem;
+    margin: 4rem 0;
     text-align: center;
   }
   
-  .simulation-section h2 {
-    font-size: 2rem;
+  .simulation-instructions {
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 2rem;
-    color: var(--cyber-blue);
-  }
-  
-  .network-visualization {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-  
-  .legitimate-network, .evil-twin-network, .hacker {
-    background: rgba(26, 26, 46, 0.8);
-    border-radius: 15px;
-    padding: 1.5rem;
-    width: 200px;
-    text-align: center;
-    border: 1px solid rgba(0, 243, 255, 0.1);
-  }
-  
-  .router-icon, .hacker-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .pulse-animation {
-    animation: pulse 2s infinite alternate;
-  }
-  
-  @keyframes pulse {
-    from {
-      box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
-    }
-    to {
-      box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
-    }
-  }
-  
-  .next-button {
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: black;
-    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
-    transition: all 0.3s ease;
-  }
-  
-  .next-button:hover {
-    box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
-    transform: translateY(-2px);
-  }
-  
-  .footer {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    margin-top: 3rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
-  }
-  
-  @keyframes gridScroll {
-    0% { background-position: 0 0; }
-    100% { background-position: 40px 40px; }
-  }
-  
-  @media (max-width: 768px) {
-    .header h1 {
-      font-size: 2rem;
-    }
-    
-    .attack-cards-container {
-      grid-template-columns: 1fr;
-    }
-    
-    .network-visualization {
-      flex-direction: column;
-    }
-  }
-
-  .network-visualization-container {
-    position: relative;
-    z-index: 2;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 70vh;
-  }
-  
-  .visualization-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    background: linear-gradient(90deg, #00f3ff, #7b2dff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
   }
   
   .network-diagram {
@@ -256,12 +176,13 @@
     border-radius: 20px;
     border: 1px solid rgba(0, 243, 255, 0.2);
     overflow: hidden;
+    margin: 0 auto;
   }
   
   .network-node {
     position: absolute;
-    width: 120px;
-    padding: 1rem;
+    width: 140px;
+    padding: 1.2rem;
     background: rgba(10, 10, 26, 0.8);
     border-radius: 10px;
     text-align: center;
@@ -276,26 +197,26 @@
   }
   
   .legitimate-device {
-    left: 10%;
-    top: 30%;
+    left: 8%;
+    top: 20%;
     border: 1px solid #00ff9d;
   }
   
   .legitimate-router {
-    left: 45%;
+    left: 43%;
     top: 55%;
     border: 1px solid #00f3ff;
   }
   
   .attacker {
-    right: 10%;
+    right: 8%;
     top: 10%;
     border: 1px solid #ff2d75;
   }
   
   .evil-twin {
-    right: 10%;
-    bottom: 10%;
+    right: 8%;
+    bottom: 15%;
     border: 1px solid #7b2dff;
   }
   
@@ -315,18 +236,16 @@
     background: rgba(26, 26, 46, 0.9);
     border-radius: 10px;
     padding: 1.5rem;
-    margin-top: 2rem;
+    margin: 2rem auto 0;
     border: 1px solid rgba(0, 243, 255, 0.3);
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
   }
   
   .close-button {
     background: #ff2d75;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 5px;
     margin-top: 1rem;
     cursor: pointer;
@@ -337,42 +256,64 @@
     background: #ff1a5e;
   }
   
-  .cyber-attacks-page {
+  /* Navigation */
+  .centered-navigation {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
     position: relative;
-    min-height: 100vh;
+    z-index: 2;
+  }
+  
+  .next-button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .next-button:hover {
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  /* Footer */
+  .resources-footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(0, 243, 255, 0.2);
+  }
+  
+  .resources-footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .resources-footer a {
+    color: var(--cyber-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .resources-footer a:hover {
     color: white;
-    overflow: hidden;
+    text-decoration: underline;
   }
   
-  .cyber-grid {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: 0;
-    animation: gridScroll 40s linear infinite;
-  }
-  
-  .cyber-lines {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      linear-gradient(to bottom, 
-        transparent 0%, 
-        rgba(0, 243, 255, 0.05) 50%, 
-        transparent 100%);
-    z-index: 0;
-    animation: scanline 8s linear infinite;
-  }
-  
+  /* Animations */
   @keyframes gridScroll {
     0% { background-position: 0 0; }
     100% { background-position: 40px 40px; }
@@ -381,4 +322,48 @@
   @keyframes scanline {
     0% { background-position: 0 -100%; }
     100% { background-position: 0 100%; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .attack-cards-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+      font-size: 2rem;
+    }
+    
+    .network-diagram {
+      height: 500px;
+    }
+    
+    .legitimate-device {
+    left: 10%;
+    top: 30%;
+    border: 1px solid #00ff9d;
+    }
+    
+    .legitimate-router {
+    left: 45%;
+    top: 50%;
+    border: 1px solid #00f3ff;
+    }
+    
+    .attacker {
+    right: 10%;
+    top: 10%;
+    border: 1px solid #ff2d75;
+    }
+    
+    .evil-twin {
+    right: 10%;
+    bottom: 10%;
+    border: 1px solid #7b2dff;
+    }
+    
+    .resources-footer ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./Module1.css";
+import "./Intro1.css";
 import routerImage from './router.png'; 
 
 const Intro1 = () => {
@@ -12,7 +12,7 @@ const Intro1 = () => {
       <div className="cyber-content">
         <div className="cyber-hero-container">
           <div className="cyber-hero">
-            <h1 className="cyber-title">Introduction to Insecure WiFi</h1>
+            <h1 className="cyber-title">Introduction to Unsecure WiFi</h1>
             <p className="cyber-subtitle">
               Wireless networks offer convenient access to the internet, but insecure WiFi networks pose serious risks, 
               including data theft, unauthorized access, and malware attacks. Understanding these threats is crucial for 
@@ -27,16 +27,6 @@ const Intro1 = () => {
             </div>
             <img src={routerImage} alt="WiFi Router" className="router-image" />
           </div>
-        </div>
-        
-        <div className="cyber-card">
-          <h2>Key Risks of Insecure WiFi</h2>
-          <ul>
-            <li>Man-in-the-Middle Attacks</li>
-            <li>Data Interception and Theft</li>
-            <li>Unauthorized Network Access</li>
-            <li>Injection of Malicious Software</li>
-          </ul>
         </div>
         
         <Link to="/modules/unsecured-wifi/attacks">
