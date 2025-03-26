@@ -1,0 +1,361 @@
+:root {
+    --cyber-blue: #00f3ff;
+    --cyber-purple: #7b2dff;
+    --cyber-dark: #0a0a1a;
+    --cyber-gray: #1a1a2e;
+    --cyber-success: #00ff9d;
+    --cyber-danger: #ff2d75;
+  }
+  
+  .protection-page {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--cyber-dark);
+    color: white;
+    padding: 2rem;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .cyber-grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    animation: gridScroll 40s linear infinite;
+  }
+  
+  .header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Protection Measures - Animated List */
+  .protection-measures {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 4rem;
+  }
+  
+  .measures-list {
+    margin-top: 2rem;
+  }
+  
+  .measure-item {
+    background: rgba(26, 26, 46, 0.6);
+    border-left: 4px solid var(--cyber-blue);
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .measure-item.active {
+    background: rgba(26, 26, 46, 0.9);
+    border-left: 4px solid var(--cyber-purple);
+  }
+  
+  .measure-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .measure-icon {
+    font-size: 1.8rem;
+  }
+  
+  .indicator {
+    margin-left: auto;
+    transition: all 0.3s ease;
+  }
+  
+  .measure-content {
+    margin-top: 1rem;
+    padding-left: 3.8rem;
+  }
+  
+  .measure-animation {
+    height: 150px;
+    margin-top: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+  
+  .measure-animation.vpn {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f3ff"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>');
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .measure-animation.https {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f3ff"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>');
+    animation: pulse 2s ease infinite;
+  }
+  
+  .measure-animation.firewall {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f3ff"><path d="M2 4v16h20V4H2zm18 14H4v-2h16v2zm0-4H4v-2h16v2zm0-4H4V8h16v2z"/></svg>');
+    animation: shake 0.5s ease-in-out infinite alternate;
+  }
+  
+  .measure-animation.update {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f3ff"><path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79 2.73 2.71 7.15 2.71 9.88 0 1.36-1.35 2.04-2.92 2.04-4.9h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58 3.51-3.47 9.14-3.47 12.65 0L21 3v7.12z"/></svg>');
+    animation: rotate 2s linear infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(-5px); }
+    100% { transform: translateX(5px); }
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Network Simulation */
+.network-simulation {
+    background: rgba(26, 26, 46, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 4rem 0;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .simulation-container {
+    height: 300px;
+    position: relative;
+    margin: 2rem 0;
+  }
+  
+  .connections {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .network-node {
+    position: absolute;
+    width: 80px;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
+  .network-node.user {
+    background: rgba(0, 255, 157, 0.1);
+    border: 1px solid var(--cyber-success);
+  }
+  
+  .network-node.router {
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--cyber-blue);
+  }
+  
+  .network-node.attacker {
+    background: rgba(255, 45, 117, 0.1);
+    border: 1px solid var(--cyber-danger);
+  }
+  
+  .node-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .node-name {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  
+  .attack-waves {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 2px solid var(--cyber-danger);
+    border-radius: 50%;
+    z-index: -1;
+  }
+  
+  .encryption-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 10, 20, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--cyber-blue);
+    font-size: 0.9rem;
+    z-index: 3;
+  }
+  
+  .simulation-caption {
+    text-align: center;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 1rem;
+  }
+  
+  /* Detection Methods */
+  .detection-methods {
+    margin-bottom: 4rem;
+  }
+  
+  .prevention-philosophy {
+    font-size: 1.1rem;
+    color: var(--cyber-success);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(0, 255, 157, 0.05);
+    border-left: 4px solid var(--cyber-success);
+  }
+  
+  .detection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .detection-card {
+    background: rgba(123, 45, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid rgba(123, 45, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .sign-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Navigation & Footer */
+  .navigation {
+    text-align: center;
+    margin: 4rem 0;
+  }
+  
+  .next-button {
+    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
+    color: black;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+  }
+  
+  .resources-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 243, 255, 0.2);
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links a {
+    color: var(--cyber-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animations */
+  @keyframes gridScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 2rem;
+    }
+    
+    .measure-content {
+      padding-left: 0;
+    }
+    
+    .detection-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .simulation-container {
+      height: 400px;
+    }
+    
+    .network-node {
+      width: 80px;
+      font-size: 0.8rem;
+    }
+  }

@@ -33,41 +33,54 @@ const Attacks1 = () => {
   const attackMethods = [
     {
       id: 'mitm',
-      title: 'Man-in-the-Middle (MitM) Attacks',
-      definition: 'Cybercriminals set up fake public Wi-Fi to intercept and manipulate traffic, positioning themselves between users and applications. This lets them steal data or impersonate trusted parties for malicious activities.',
-      icon: '👥',
+      title: 'Man-in-the-Middle (MitM)',
+      definition: 'Cybercriminals set up fake public Wi-Fi to intercept and manipulate traffic, positioning themselves between users and applications.',
+      icon: '👬',
       examples: [
-        { name: '[1]', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-hacking/wi-fi-hacking-how-it-works-and-how-to-stay-secure/#6CommonTechniques' },
+        'E-commerce platforms',
+        'Software as a Service apps',
+        'Banking apps'
       ]
     },
     {
       id: 'evilTwin',
       title: 'Evil Twin Attacks',
-      definition: 'Cybercriminals set up fraudulent Wi-Fi access points that mimic legitimate networks. Unsuspecting users connect to these malicious networks.',
+      definition: 'Cybercriminals set up fraudulent Wi-Fi access points that mimic legitimate networks to capture sensitive data.',
       icon: '😈',
       examples: [
-        { name: 'Pera Prometheus Consulting', url: '#' },
-        { name: 'Wikipedia', url: '#' }
+        'Corporate networks',
+        'Hotel WiFi',
+        'Airport hotspots'
       ]
     },
     {
       id: 'packetSniffing',
       title: 'Packet Sniffing',
-      definition: 'In unsecured networks, data transmitted between devices and routers can be captured, leading to unauthorized access to sensitive information.',
+      definition: 'Attackers passively intercept data on unsecured Wi-Fi networks, allowing them to monitor traffic and steal sensitive information.',
       icon: '👃',
       examples: [
-        { name: 'TechRadar', url: '#' }
+        'HTTP traffic',
+        'FTP logins',
+        'Unencrypted emails'
       ]
     },
     {
       id: 'malware',
       title: 'Malware Distribution',
-      definition: 'Attackers exploit WiFi vulnerabilities to inject malware into connected devices, compromising data and system functionality.',
+      definition: 'Attackers inject malicious software through network vulnerabilities.',
       icon: '🦠',
       examples: [
-        { name: 'IJSER', url: '#' }
+        'Ransomware',
+        'Keyloggers',
+        'Spyware'
       ]
     }
+  ];
+
+  const resources = [
+    { name: 'Checkpoint Research', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-hacking/wi-fi-hacking-how-it-works-and-how-to-stay-secure/#6CommonTechniques' },
+    { name: 'OWASP Guidelines', url: 'https://owasp.org/' },
+    { name: 'NIST Standards', url: 'https://www.nist.gov/' }
   ];
 
   return (
@@ -89,7 +102,7 @@ const Attacks1 = () => {
         <p className="subtitle">Interactive guide to common wireless attack vectors</p>
       </motion.div>
 
-      <div className="attack-cards-container">
+      <div className="attack-cards-grid">
         {attackMethods.map((attack) => (
           <div 
             key={attack.id}
@@ -99,20 +112,16 @@ const Attacks1 = () => {
             <div className="card-front">
               <div className="attack-icon">{attack.icon}</div>
               <h3>{attack.title}</h3>
-              <p>{attack.description}</p>
-              <button className="flip-button">Show definition →</button>
+              <button className="flip-button">View Details →</button>
             </div>
             <div className="card-back">
-              <p>{attack.definition}</p>
+              <h3>{attack.title}</h3>
+              <p className="definition">{attack.definition}</p>
               <div className="examples">
-                <h4>Example targets:</h4>
+                <h4>Example Targets:</h4>
                 <ul>
                   {attack.examples.map((example, index) => (
-                    <li key={index}>
-                      <a href={example.url} target="_blank" rel="noopener noreferrer">
-                        {example.name}
-                      </a>
-                    </li>
+                    <li key={index}>{example}</li>
                   ))}
                 </ul>
               </div>
@@ -122,7 +131,6 @@ const Attacks1 = () => {
         ))}
       </div>
 
-      {/* Network Simulation Section */}
       <motion.div 
         className="simulation-section"
         initial={{ opacity: 0 }}
@@ -133,7 +141,6 @@ const Attacks1 = () => {
         <p className="simulation-instructions">Click on attacker nodes to see how different attacks work</p>
         
         <div className="network-diagram">
-          {/* Legitimate Device */}
           <motion.div 
             className="network-node legitimate-device"
             initial={{ opacity: 0, y: 20 }}
@@ -145,7 +152,6 @@ const Attacks1 = () => {
             <p>Your Device</p>
           </motion.div>
 
-          {/* Legitimate Router */}
           <motion.div 
             className="network-node legitimate-router"
             initial={{ opacity: 0, y: 20 }}
@@ -157,35 +163,31 @@ const Attacks1 = () => {
             <p>Legitimate Router</p>
           </motion.div>
 
-          {/* Attacker Nodes */}
-          {/* Attacker Nodes */}
           <motion.div 
-          className="network-node attacker"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          whileHover={{ scale: 1.05 }}
-          onClick={() => setShowAttack('mitm')}
+            className="network-node attacker"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            onClick={() => setShowAttack('mitm')}
           >
-          <div className="attacker-icon">👥</div>
-          <p>Man-in-the-Middle</p>
+            <div className="attacker-icon">👬</div>
+            <p>Man-in-the-Middle</p>
           </motion.div>
 
           <motion.div 
-          className="network-node evil-twin"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          whileHover={{ scale: 1.05 }}
-          onClick={() => setShowAttack('evilTwin')}
+            className="network-node evil-twin"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            whileHover={{ scale: 1.05 }}
+            onClick={() => setShowAttack('evilTwin')}
           >
-          <div className="router-icon">😈</div>
-          <p>Evil Twin</p>
+            <div className="router-icon">😈</div>
+            <p>Evil Twin</p>
           </motion.div>
 
-          {/* Connection Lines */}
           <svg className="connection-lines" width="100%" height="100%">
-            {/* Legitimate connection */}
             <motion.line
               x1="20%" y1="40%"
               x2="50%" y2="55%"
@@ -197,7 +199,6 @@ const Attacks1 = () => {
               transition={{ duration: 1 }}
             />
             
-            {/* Attack connections */}
             {showAttack === 'mitm' && (
               <>
                 <motion.line
@@ -235,7 +236,6 @@ const Attacks1 = () => {
           </svg>
         </div>
 
-        {/* Attack Description Panel */}
         {showAttack && (
           <motion.div 
             className="attack-description"
@@ -258,23 +258,25 @@ const Attacks1 = () => {
         )}
       </motion.div>
 
-      <motion.div 
-        className="navigation"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.7 }}
-      >
+      <div className="centered-navigation">
         <Link to="/modules/unsecured-wifi/protection">
           <button className="next-button">
             Next: Protection measures →
           </button>
         </Link>
-      </motion.div>
-
-      <div className="footer">
-        <p>Educational content compiled from various cybersecurity resources</p>
-        name: '[1]', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-hacking/wi-fi-hacking-how-it-works-and-how-to-stay-secure/#6CommonTechniques'
       </div>
+
+      <footer className="resources-footer">
+        <ul>
+          {resources.map((resource, index) => (
+            <li key={index}>
+              <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                {resource.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </footer>
     </motion.div>
   );
 };
