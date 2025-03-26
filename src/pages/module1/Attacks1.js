@@ -28,32 +28,24 @@ const Attacks1 = () => {
       description: "Fake access point mimicking legitimate network",
       color: "#7b2dff"
     },
-    packetSniffing: {
-      name: "Packet Sniffing",
-      description: "Capturing unencrypted data transmissions",
-      color: "#00f3ff"
-    }
   };
 
   const attackMethods = [
     {
       id: 'mitm',
       title: 'Man-in-the-Middle (MitM) Attacks',
-      description: 'Attackers intercept communications between two parties to eavesdrop or alter data. This is particularly prevalent in public Wi-Fi settings where encryption is weak or nonexistent.',
-      prevention: 'Use VPNs, enable HTTPS everywhere, and verify network authenticity.',
+      definition: 'Cybercriminals set up fake public Wi-Fi to intercept and manipulate traffic, positioning themselves between users and applications. This lets them steal data or impersonate trusted parties for malicious activities.',
       icon: '👥',
-      resources: [
-        { name: 'Pera Prometheus Consulting', url: '#' },
-        { name: 'Arizona Repository', url: '#' }
+      examples: [
+        { name: '[1]', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-hacking/wi-fi-hacking-how-it-works-and-how-to-stay-secure/#6CommonTechniques' },
       ]
     },
     {
       id: 'evilTwin',
       title: 'Evil Twin Attacks',
-      description: 'Cybercriminals set up fraudulent Wi-Fi access points that mimic legitimate networks. Unsuspecting users connect to these malicious networks.',
-      prevention: 'Verify network names with staff, use enterprise authentication when available.',
-      icon: '👯',
-      resources: [
+      definition: 'Cybercriminals set up fraudulent Wi-Fi access points that mimic legitimate networks. Unsuspecting users connect to these malicious networks.',
+      icon: '😈',
+      examples: [
         { name: 'Pera Prometheus Consulting', url: '#' },
         { name: 'Wikipedia', url: '#' }
       ]
@@ -61,20 +53,18 @@ const Attacks1 = () => {
     {
       id: 'packetSniffing',
       title: 'Packet Sniffing',
-      description: 'In unsecured networks, data transmitted between devices and routers can be captured, leading to unauthorized access to sensitive information.',
-      prevention: 'Use encrypted protocols (HTTPS, SSH), avoid transmitting sensitive data on public WiFi.',
-      icon: '👂',
-      resources: [
+      definition: 'In unsecured networks, data transmitted between devices and routers can be captured, leading to unauthorized access to sensitive information.',
+      icon: '👃',
+      examples: [
         { name: 'TechRadar', url: '#' }
       ]
     },
     {
       id: 'malware',
       title: 'Malware Distribution',
-      description: 'Attackers exploit WiFi vulnerabilities to inject malware into connected devices, compromising data and system functionality.',
-      prevention: 'Keep systems updated, use firewalls, disable file sharing on public networks.',
+      definition: 'Attackers exploit WiFi vulnerabilities to inject malware into connected devices, compromising data and system functionality.',
       icon: '🦠',
-      resources: [
+      examples: [
         { name: 'IJSER', url: '#' }
       ]
     }
@@ -110,18 +100,17 @@ const Attacks1 = () => {
               <div className="attack-icon">{attack.icon}</div>
               <h3>{attack.title}</h3>
               <p>{attack.description}</p>
-              <button className="flip-button">Learn Prevention →</button>
+              <button className="flip-button">Show definition →</button>
             </div>
             <div className="card-back">
-              <h3>How to Prevent</h3>
-              <p>{attack.prevention}</p>
-              <div className="resources">
-                <h4>Resources:</h4>
+              <p>{attack.definition}</p>
+              <div className="examples">
+                <h4>Example targets:</h4>
                 <ul>
-                  {attack.resources.map((resource, index) => (
+                  {attack.examples.map((example, index) => (
                     <li key={index}>
-                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
-                        {resource.name}
+                      <a href={example.url} target="_blank" rel="noopener noreferrer">
+                        {example.name}
                       </a>
                     </li>
                   ))}
@@ -178,7 +167,7 @@ const Attacks1 = () => {
           whileHover={{ scale: 1.05 }}
           onClick={() => setShowAttack('mitm')}
           >
-          <div className="attacker-icon">👤</div>
+          <div className="attacker-icon">👥</div>
           <p>Man-in-the-Middle</p>
           </motion.div>
 
@@ -190,7 +179,7 @@ const Attacks1 = () => {
           whileHover={{ scale: 1.05 }}
           onClick={() => setShowAttack('evilTwin')}
           >
-          <div className="router-icon">👿</div>
+          <div className="router-icon">😈</div>
           <p>Evil Twin</p>
           </motion.div>
 
@@ -199,7 +188,7 @@ const Attacks1 = () => {
             {/* Legitimate connection */}
             <motion.line
               x1="20%" y1="40%"
-              x2="50%" y2="50%"
+              x2="50%" y2="55%"
               stroke="#00ff9d"
               strokeWidth="2"
               strokeDasharray="5,5"
@@ -212,7 +201,7 @@ const Attacks1 = () => {
             {showAttack === 'mitm' && (
               <>
                 <motion.line
-                  x1="50%" y1="50%"
+                  x1="50%" y1="55%"
                   x2="80%" y2="30%"
                   stroke={attackTypes.mitm.color}
                   strokeWidth="3"
@@ -235,7 +224,7 @@ const Attacks1 = () => {
             {showAttack === 'evilTwin' && (
               <motion.line
                 x1="20%" y1="40%"
-                x2="80%" y2="60%"
+                x2="80%" y2="70%"
                 stroke={attackTypes.evilTwin.color}
                 strokeWidth="3"
                 initial={{ opacity: 0 }}
@@ -284,6 +273,7 @@ const Attacks1 = () => {
 
       <div className="footer">
         <p>Educational content compiled from various cybersecurity resources</p>
+        name: '[1]', url: 'https://www.checkpoint.com/cyber-hub/cyber-security/what-is-hacking/wi-fi-hacking-how-it-works-and-how-to-stay-secure/#6CommonTechniques'
       </div>
     </motion.div>
   );
