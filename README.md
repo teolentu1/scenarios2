@@ -2,4 +2,4 @@
 
 ## Note: 
 
-You must perform the command `npm install lottie-react` before running to ensure the animations work properly.
+You must perform the commands `npm install lottie-react` and `npm install framer-motion react-icons` before running to ensure the animations work properly.
