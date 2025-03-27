@@ -241,15 +241,11 @@ const Protection1 = () => {
         </div>
       </div>
 
-      <div className="navigation">
-        <Link to="/modules/unsecured-wifi/caseStudies">
-          <motion.button
-            className="next-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+      <div className="centered-navigation">
+        <Link to="/modules/unsecured-wifi/casestudies">
+          <button className="next-button">
             Next: Real-World Case Studies →
-          </motion.button>
+          </button>
         </Link>
       </div>
 

@@ -142,6 +142,30 @@ const CaseStudies1 = () => {
         </Link>
       </div>
 
+      <div className="navigation">
+        <Link to="/modules/unsecured-wifi/protection">
+          <button 
+            className="back-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}>
+            ← Back to Protection
+          </button>
+        </Link>
+        <Link to="/modules/unsecured-wifi/summary">
+          <button className="next-button">
+            Summary →
+          </button>
+        </Link>
+      </div>
+
+      <div className="centered-navigation">
+        <Link to="/modules/unsecured-wifi/summary">
+          <button className="next-button">
+            Next: Summary →
+          </button>
+        </Link>
+      </div>
+
       <footer className="resources-footer">
         <h4>Additional Resources</h4>
         <div className="footer-links">

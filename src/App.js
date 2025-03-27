@@ -11,6 +11,7 @@ import UnsecuredWifi from './pages/module1/Intro1';
 import Attacks1 from './pages/module1/Attacks1';
 import Protection1 from './pages/module1/Protection1';
 import CaseStudies1 from './pages/module1/CaseStudies1';
+import Summary1 from './pages/module1/Summary1';
 import Attacks2 from './pages/module2/Attacks2';
 import Protection2 from './pages/module2/Protection2';
 import CaseStudies2 from './pages/module2/CaseStudies2';
@@ -28,7 +29,8 @@ function App() {
         <Route path="/modules/unsecured-wifi" element={<UnsecuredWifi />} />
         <Route path="/modules/unsecured-wifi/attacks" element={<Attacks1 />} />
         <Route path="/modules/unsecured-wifi/protection" element={<Protection1 />} />
-        <Route path="/modules/unsecured-wifi/caseStudies" element={<CaseStudies1 />} />
+        <Route path="/modules/unsecured-wifi/casestudies" element={<CaseStudies1 />} />
+        <Route path="/modules/unsecured-wifi/summary" element={<Summary1 />} />
         <Route path="/modules/password-security" element={<Intro2 />} />
         <Route path="/modules/password-security/attacks" element={<Attacks2 />} />
         <Route path="/modules/password-security/protection" element={<Protection2 />} />
