@@ -1,7 +1,6 @@
 {
-    "id": 6,
-    "title": "Review Quiz - Unsecured Wifi and Password Security",
-    "totalQuestions": 6,
+    "title": "Review Quiz - Unsecured Wi-Fi and Password Security",
+    "totalQuestions": 8,
     "dependencies": ["passwordSecurity.json", "unsecuredWifi.json"],
     "questions": [
       {
@@ -63,6 +62,27 @@
           "Use it only for browsing"
         ],
         "correctAnswer": "Change the password immediately"
+      },
+      {
+        "question": "Why is using public Wi-Fi without protection dangerous?",
+        "options": [
+          "It drains battery faster",
+          "Hackers can intercept your data",
+          "It slows down your connection",
+          "It only affects streaming services"
+        ],
+        "correctAnswer": "Hackers can intercept your data"
+      },
+      {
+        "question": "How can you improve the security of your home Wi-Fi?",
+        "options": [
+          "Keeping the default router password",
+          "Using WPA3 encryption and strong passwords",
+          "Disabling the firewall",
+          "Sharing the password with neighbors"
+        ],
+        "correctAnswer": "Using WPA3 encryption and strong passwords"
       }
     ]
   }
+  

@@ -6,10 +6,8 @@ import { motion } from "framer-motion";
 import { FaLock, FaShieldAlt, FaChartBar, FaQuestionCircle, FaChevronRight } from "react-icons/fa";
 
 const tempModules = [
-  { id: 1, title: "Introduction to Cybersecurity", completed: true },
-  { id: 2, title: "Network Security Fundamentals", completed: true },
-  { id: 3, title: "Cryptography Basics", completed: false },
-  { id: 4, title: "Ethical Hacking", completed: false },
+  { id: 1, title: "Unsecure WiFi Networks", completed: true },
+  { id: 2, title: "Password Security", completed: false },
 ];
 
 

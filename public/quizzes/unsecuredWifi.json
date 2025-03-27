@@ -1,7 +1,6 @@
 {
-    "id": 5,
     "title": "Unsecured Wi-Fi Network Quiz",
-    "totalQuestions": 5,
+    "totalQuestions": 7,
     "questions": [
       {
         "question": "What is a primary risk of using an unsecured Wi-Fi network?",
@@ -9,49 +8,70 @@
           "Faster internet speed",
           "Data interception by attackers",
           "Improved signal strength",
-          "Reduced battery usage"
+          "Reduced battery consumption"
         ],
-        "correctAnswer": "Data interception by attackers"
+        "answer": "Data interception by attackers"
       },
       {
-        "question": "Which protocol should a secure Wi-Fi network use?",
+        "question": "Which type of attack involves setting up a fraudulent Wi-Fi network to steal user data?",
         "options": [
-          "WEP",
-          "WPA2 or WPA3",
-          "FTP",
-          "HTTP"
+          "Denial of Service",
+          "Evil Twin Attack",
+          "Phishing Attack",
+          "Brute Force Attack"
         ],
-        "correctAnswer": "WPA2 or WPA3"
+        "answer": "Evil Twin Attack"
       },
       {
-        "question": "What should you avoid doing on a public Wi-Fi network?",
+        "question": "How does a Man-in-the-Middle (MitM) attack compromise security?",
         "options": [
-          "Checking the weather",
-          "Streaming music",
-          "Accessing your bank account",
-          "Browsing social media"
+          "By blocking access to certain websites",
+          "By secretly intercepting and altering communication between devices",
+          "By flooding the network with excessive traffic",
+          "By requiring two-factor authentication"
         ],
-        "correctAnswer": "Accessing your bank account"
+        "answer": "By secretly intercepting and altering communication between devices"
       },
       {
-        "question": "What does a VPN do when using an unsecured Wi-Fi network?",
+        "question": "Which security measure can help encrypt your internet traffic on public Wi-Fi networks?",
         "options": [
-          "Increases connection speed",
-          "Encrypts your data",
-          "Blocks all websites",
-          "Changes your Wi-Fi password"
+          "Using a VPN",
+          "Disabling Bluetooth",
+          "Reducing screen brightness",
+          "Using incognito mode in a browser"
         ],
-        "correctAnswer": "Encrypts your data"
+        "answer": "Using a VPN"
       },
       {
-        "question": "Why is it dangerous to leave your Wi-Fi router’s default password unchanged?",
+        "question": "What is a sign that you might be connected to an Evil Twin network?",
         "options": [
-          "It slows down the network",
-          "Default passwords are easily guessable",
-          "It prevents device connections",
-          "It limits the range"
+          "Unusually fast internet speeds",
+          "A duplicate Wi-Fi network with the same name",
+          "A requirement to accept new terms and conditions",
+          "No need for a password to connect"
         ],
-        "correctAnswer": "Default passwords are easily guessable"
+        "answer": "A duplicate Wi-Fi network with the same name"
+      },
+      {
+        "question": "Which website protocol indicates a secure connection?",
+        "options": [
+          "http://",
+          "ftp://",
+          "https://",
+          "ws://"
+        ],
+        "answer": "https://"
+      },
+      {
+        "question": "What is the role of a firewall in network security?",
+        "options": [
+          "To physically protect the router from damage",
+          "To monitor and block unauthorized connections",
+          "To improve the speed of the network",
+          "To disable all wireless connections"
+        ],
+        "answer": "To monitor and block unauthorized connections"
       }
     ]
   }
+  
