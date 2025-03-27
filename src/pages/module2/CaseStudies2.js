@@ -93,7 +93,7 @@ function CaseStudies2() {
         </section>
 
         <div className="mod-btn-container">
-          <Link to="/modules/password-security/good-practices">
+          <Link to="/modules/password-security/protection">
             <motion.button
               className="cyber-btn mod-btn"
               whileHover={{ scale: 1.05 }}
