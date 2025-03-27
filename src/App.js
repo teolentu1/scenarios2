@@ -28,7 +28,7 @@ function App() {
         <Route path="/modules/unsecured-wifi" element={<UnsecuredWifi />} />
         <Route path="/modules/unsecured-wifi/attacks" element={<Attacks1 />} />
         <Route path="/modules/unsecured-wifi/protection" element={<Protection1 />} />
-        <Route path="/modules/unsecured-wifi/casestudies" element={<CaseStudies1 />} />
+        <Route path="/modules/unsecured-wifi/caseStudies" element={<CaseStudies1 />} />
         <Route path="/modules/password-security" element={<Intro2 />} />
         <Route path="/modules/password-security/attacks" element={<Attacks2 />} />
         <Route path="/modules/password-security/protection" element={<Protection2 />} />

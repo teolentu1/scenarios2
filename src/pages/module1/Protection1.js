@@ -66,9 +66,9 @@ const Protection1 = () => {
   ];
 
   const networkNodes = [
-    { id: 'device', type: 'user', icon: '💻', name: 'Your Device', x: 15, y: 50 },
-    { id: 'router', type: 'router', icon: '📶', name: 'Secure Router', x: 50, y: 50 },
-    { id: 'attacker', type: 'attacker', icon: '👤', name: 'Hacker', x: 85, y: 30 }
+    { id: 'device', type: 'user', icon: '💻', name: 'Your Device', x: 4, y: 35 },
+    { id: 'router', type: 'router', icon: '📶', name: 'Secure Router', x: 45, y: 37 },
+    { id: 'attacker', type: 'attacker', icon: '👤', name: 'Hacker', x: 85, y: 25 }
   ];
 
   return (
@@ -242,7 +242,7 @@ const Protection1 = () => {
       </div>
 
       <div className="navigation">
-        <Link to="/modules/unsecured-wifi/casestudies">
+        <Link to="/modules/unsecured-wifi/caseStudies">
           <motion.button
             className="next-button"
             whileHover={{ scale: 1.05 }}
@@ -255,7 +255,7 @@ const Protection1 = () => {
 
       <footer className="resources-footer">
         <div className="footer-content">
-          <h4>Advanced Resources</h4>
+          <h4>Resources used</h4>
           <div className="footer-links">
             <a href="https://www.cisa.gov/secure-connections" target="_blank" rel="noopener noreferrer">CISA Encryption Guide</a>
             <a href="https://www.eff.org/https-everywhere" target="_blank" rel="noopener noreferrer">EFF Security Tools</a>

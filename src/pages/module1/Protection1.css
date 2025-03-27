@@ -179,7 +179,7 @@
   
   .network-node {
     position: absolute;
-    width: 80px;
+    width: 120px;
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
@@ -225,8 +225,8 @@
   
   .encryption-badge {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 25%;
+    left: 42%;
     transform: translate(-50%, -50%);
     background: rgba(0, 10, 20, 0.8);
     padding: 0.5rem 1rem;
