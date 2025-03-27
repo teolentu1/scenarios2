@@ -28,12 +28,9 @@ function Intro2() {
         <section className="mod-section">
           <h2 className="mod-heading">What is a strong password?</h2>
           <p className="mod-text">
-            A strong password is one that is long, unique, and hard to guess. By being lengthy, it increases 
-            the number of possible combinations, making it exponentially more challenging for unauthorized 
-            parties to crack it through brute-force attacks. A unique password ensures that even if one 
-            account is compromised, the same credentials cannot be used to access other accounts. Ultimately, 
-            a password that combines these attributes significantly reduces the risk of being easily deciphered 
-            by attackers.
+            Strong passwords are those which are difficult to guess or crack by unauthorized users. Strong passwords
+            must follow a specific criteria to be considered secure (we will talk about this criteria in detail in 
+            the <a href="/modules/password-security/protection">Good Practices</a> section). 
           </p>
         </section>
 
