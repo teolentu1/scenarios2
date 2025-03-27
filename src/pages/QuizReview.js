@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './QuizReview.css';
+import { motion } from 'framer-motion';
 
 const QuizReview = () => {
   const { filename } = useParams();
@@ -8,6 +10,9 @@ const QuizReview = () => {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showEncouragement, setShowEncouragement] = useState(false);
+  const bottomRef = useRef(null); // Reference to the bottom of the page
+  const hasShownEncouragement = useRef(false); // Track if pop-up has been shown
 
   useEffect(() => {
     const loadData = async () => {
@@ -36,6 +41,38 @@ const QuizReview = () => {
     loadData();
   }, [filename]);
 
+  useEffect(() => {
+    if (!quizData || !result) return;
+
+    const percentage = (result.score / quizData.questions.length) * 100;
+    if (percentage >= 30) return; // No need to set up observer if score ≥ 30%
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasShownEncouragement.current) {
+          setShowEncouragement(true);
+          hasShownEncouragement.current = true; // Mark as shown
+          observer.disconnect(); // Prevent re-triggering
+        }
+      },
+      { threshold: 0.9 } // Trigger when 90% of the bottom element is visible
+    );
+
+    if (bottomRef.current) {
+      observer.observe(bottomRef.current);
+    }
+
+    return () => {
+      if (bottomRef.current) {
+        observer.unobserve(bottomRef.current);
+      }
+    };
+  }, [quizData, result]);
+
+  const handleDismiss = () => {
+    setShowEncouragement(false);
+  };
+
   if (loading) return <div>Loading review...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!quizData || !quizData.questions || !result) return <div>No review data available</div>;
@@ -57,6 +94,22 @@ const QuizReview = () => {
         </div>
       ))}
       <button onClick={() => navigate(`/quiz/${filename}`)}>Retake Quiz</button>
+      <div ref={bottomRef} style={{ height: '1px' }} /> {/* Invisible trigger at bottom */}
+
+      {showEncouragement && (
+        <motion.div
+          className="encouragement-popup"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <p>Keep going! Every attempt helps you grow stronger in cybersecurity!</p>
+          <button className="dismiss-btn" onClick={handleDismiss}>
+            Got it!
+          </button>
+        </motion.div>
+      )}
     </div>
   );
 };

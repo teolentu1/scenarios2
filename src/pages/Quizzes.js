@@ -18,10 +18,11 @@ const Quizzes = () => {
         const response = await fetch(`/quizzes/${filename}`);
         if (!response.ok) throw new Error(`Failed to load quiz: ${filename}`);
         const data = await response.json();
-        const normalizedData = Array.isArray(data)
-          ? { title: filename.replace('.json', ''), questions: data }
-          : data;
-        setQuizData(normalizedData);
+        
+        setQuizData({
+          title: data.title || filename.replace('.json', ''),
+          questions: data.questions || [],
+        });
       } catch (error) {
         console.error('Error loading quiz data:', error);
         setError(error.message);
@@ -37,7 +38,7 @@ const Quizzes = () => {
   };
 
   const handleSubmitQuiz = () => {
-    if (!quizData?.questions) return;
+    if (!quizData?.questions?.length) return;
     let newScore = 0;
     quizData.questions.forEach((question, index) => {
       if (userAnswers[index] === question.correctAnswer) {
@@ -52,12 +53,12 @@ const Quizzes = () => {
       timestamp: new Date().toISOString(),
     };
     localStorage.setItem(`quizResult_${filename}`, JSON.stringify(result));
-    navigate(`/quiz/${filename}/review`); // Redirect to review page
+    navigate(`/quiz/${filename}/review`);
   };
 
   if (loading) return <div>Loading quiz...</div>;
   if (error) return <div>Error: {error}</div>;
-  if (!quizData || !quizData.questions) return <div>No quiz data available</div>;
+  if (!quizData?.questions?.length) return <div>No quiz data available</div>;
 
   return (
     <div className="quiz-container">
@@ -78,9 +79,7 @@ const Quizzes = () => {
           </div>
         </div>
       ))}
-      <button className="submit-btn" onClick={handleSubmitQuiz}>
-        Submit Quiz
-      </button>
+      <button className="submit-btn" onClick={handleSubmitQuiz}>Submit Quiz</button>
     </div>
   );
 };

@@ -11,7 +11,6 @@ import UnsecuredWifi from './pages/module1/Intro1';
 import Attacks1 from './pages/module1/Attacks1';
 import Protection1 from './pages/module1/Protection1';
 import CaseStudies1 from './pages/module1/CaseStudies1';
-import PasswordSecurity from './pages/PasswordSecurity';
 import Attacks2 from './pages/module2/Attacks2';
 import Protection2 from './pages/module2/Protection2';
 import CaseStudies2 from './pages/module2/CaseStudies2';

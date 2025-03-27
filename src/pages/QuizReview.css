@@ -91,6 +91,49 @@
     box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
   }
   
+  .encouragement-popup {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 400px; /* Fixed width for consistency */
+    max-width: 90%; /* Responsive cap */
+    margin: 0 auto; /* Center horizontally */
+    transform: translateY(-50%); /* Center vertically only */
+    background: rgba(26, 26, 46, 0.95);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--cyber-blue);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+    text-align: center;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+  
+  .encouragement-popup p {
+    font-size: 1.2rem;
+    color: var(--cyber-success);
+    text-shadow: 0 0 5px rgba(0, 255, 157, 0.3);
+    margin: 0 0 1rem 0;
+  }
+  
+  .encouragement-popup .dismiss-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--cyber-blue);
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--cyber-blue);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .encouragement-popup .dismiss-btn:hover {
+    background: rgba(0, 243, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+  }
+  
+  /* Responsive Adjustments */
   @media (max-width: 768px) {
     .quiz-container {
       padding: 1.5rem;
@@ -103,5 +146,16 @@
     }
     .question-block h3 {
       font-size: 1.2rem;
+    }
+    .encouragement-popup {
+      padding: 1rem 1.5rem;
+      width: 300px; /* Smaller fixed width for mobile */
+    }
+    .encouragement-popup p {
+      font-size: 1rem;
+    }
+    .encouragement-popup .dismiss-btn {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
     }
   }
