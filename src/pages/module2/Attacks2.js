@@ -66,31 +66,42 @@ function Attacks2() {
 
         <section className="mod-section">
           <h2 className="mod-heading">What are Cyber Threats?</h2>
-          <p className="mod-text">
-            Cyber threats are malicious attempts to damage, disrupt, or gain unauthorized access to computer systems,
-            networks, or devices. These threats can come in various forms, including viruses, malware, phishing attacks,
-            and ransomware. Understanding the nature of these threats is crucial in developing effective strategies to
-            protect against them.
-          </p>
+          <div className="mod-text">
+          <p>  Cyber threats are malicious attempts to get access to data, damage dasta, or just interfere with 
+            digital processes.
+            (<a href="https://www.upguard.com/blog/cyber-threat"
+               target="_blank" rel="noreferrer">
+                Upguard</a>)
+          </p><br></br>
+            <p>Some examples of this include:</p>
+            <ul className="mod-list">
+              <li>Viruses</li>
+              <li>Ransomware</li>
+              <li>DDoS attacks</li>
+            </ul>  
+          </div>
         </section>
 
         <section className="mod-section">
-          <h2 className="mod-heading">Why are they Dangerous?</h2>
+          <h2 className="mod-heading">Why are People with Unsecure Passwords at Risk?</h2>
           <p className="mod-text">
-            Cyber threats pose significant dangers to individuals and organizations alike. They can lead to data
-            breaches, financial loss, and damage to reputation. In severe cases, cyber attacks can disrupt critical
-            infrastructure and services, causing widespread harm. Recognizing the potential impact of these threats
-            underscores the importance of robust cybersecurity measures.
+            Think of having an unsecure password as the front door of your home having a flimsy lock, one
+            that can easily be picked, making it easy for thieves to get into your home. This is the same 
+            as having an unsecure password, it makes your data vulnerable to cyber threats and attacks.
+          </p><br></br>
+          <p>
+            Meanwhile, having a secure password can be likened to having a very strong lock on your front door
+            that no one is able to bypass except you. Secure passwords make you no longer vulnerable to such threats. 
           </p>
-        </section>
-
-        <section className="mod-section">
-          <h2 className="mod-heading">Examples of Cyber Risks:</h2>
+          <h3 className="mod-subheading">Putting this into Perspective:</h3>
           <p className="mod-text">
-            Cyber risks encompass a wide range of potential issues. For instance, phishing attacks trick individuals
-            into revealing sensitive information, while ransomware locks users out of their systems until a ransom is
-            paid. Another example is a Distributed Denial of Service (DDoS) attack, which overwhelms a network with
-            traffic, rendering it unusable. These examples illustrate the diverse and evolving nature of cyber risks.
+          Consider a simple four-digit password consisting only of numbers. This type of password has a maximum of 
+          10,000 possible combinations. Although this may sound like a lot, automated tools can process this amount of 
+          data in seconds. It doesn't seem strong enough to protect your private personal information, does it?
+          </p><br></br>
+          <p className="mod-text">
+          Well, not to worry because we will address this issue in the next section by delving deeper into how to create 
+          a secure password!
           </p>
         </section>
 

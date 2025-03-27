@@ -11,8 +11,8 @@ const QuizReview = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showEncouragement, setShowEncouragement] = useState(false);
-  const bottomRef = useRef(null); // Reference to the bottom of the page
-  const hasShownEncouragement = useRef(false); // Track if pop-up has been shown
+  const bottomRef = useRef(null); 
+  const hasShownEncouragement = useRef(false); 
 
   useEffect(() => {
     const loadData = async () => {
@@ -45,17 +45,17 @@ const QuizReview = () => {
     if (!quizData || !result) return;
 
     const percentage = (result.score / quizData.questions.length) * 100;
-    if (percentage >= 30) return; // No need to set up observer if score ≥ 30%
+    if (percentage >= 30) return; 
 
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasShownEncouragement.current) {
           setShowEncouragement(true);
-          hasShownEncouragement.current = true; // Mark as shown
-          observer.disconnect(); // Prevent re-triggering
+          hasShownEncouragement.current = true; 
+          observer.disconnect(); 
         }
       },
-      { threshold: 0.9 } // Trigger when 90% of the bottom element is visible
+      { threshold: 0.9 } 
     );
 
     if (bottomRef.current) {
@@ -94,7 +94,7 @@ const QuizReview = () => {
         </div>
       ))}
       <button onClick={() => navigate(`/quiz/${filename}`)}>Retake Quiz</button>
-      <div ref={bottomRef} style={{ height: '1px' }} /> {/* Invisible trigger at bottom */}
+      <div ref={bottomRef} style={{ height: '1px' }} /> 
 
       {showEncouragement && (
         <motion.div

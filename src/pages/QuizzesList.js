@@ -39,13 +39,11 @@ const QuizzesList = () => {
     setCompletedQuizzes(storedResults);
   }, []);
 
-  // Check if a quiz's dependencies are met
   const areDependenciesMet = (dependencies) => {
     if (!dependencies || dependencies.length === 0) return true;
     return dependencies.every((dep) => completedQuizzes[dep]); 
   };
 
-  // Get titles of dependency quizzes
   const getDependencyTitles = (dependencies) => {
     if (!dependencies || dependencies.length === 0) return '';
     return dependencies

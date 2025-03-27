@@ -35,13 +35,13 @@ function Summary2() {
               Previous: Case Studies
             </motion.button>
           </Link>
-          <Link to="/modules/quiz">
+          <Link to="/">
             <motion.button
               className="cyber-btn mod-btn next-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 1.0 }}
             >
-              Next: Quiz
+              Next: Home
             </motion.button>
           </Link>
         </div>

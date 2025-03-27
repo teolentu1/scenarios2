@@ -48,6 +48,7 @@ function Protection2() {
   };
 
   return (
+    
     <div className="mod-wrapper">
       <motion.div
         className="cyber-panel mod-card"
