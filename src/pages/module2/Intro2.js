@@ -37,12 +37,32 @@ function Intro2() {
         <section className="mod-section">
           <h2 className="mod-heading">Why do they matter?</h2>
           <p className="mod-text">
-            The importance of strong passwords cannot be overstated. Weak or common passwords are the primary 
-            cause of many security breaches, often leading to account takeovers and significant data theft. 
-            When cybercriminals gain access to one account, they may exploit that vulnerability to target 
-            additional systems, compromising personal or business data. Hence, maintaining robust password 
-            practices is a fundamental step in securing online identities and sensitive information.
+            The importance of strong passwords cannot be overstated. They offer a variety of different, essential benefits
+            which include:
           </p>
+          <ul className="mod-list">
+            <li>Protection of financial data like bank account and credit card information
+              (<a href="https://missionsupport.archden.org/knowledgebase/the-importance-of-a-strong-password/?sfw=pass1743081781"
+               target="_blank" rel="noreferrer">
+                Archdiocese of Denver</a>)
+            </li>
+            <li> Protection from hackers and cyber attacks
+            (<a href="https://www.waldenu.edu/programs/information-technology/resource/cybersecurity-101-why-choosing-a-secure-password-in-so-important#"
+               target="_blank" rel="noreferrer">
+                Walden University</a>)
+            </li>
+            <li> Protection from identity theft
+            (<a href="https://www.metacompliance.com/blog/cyber-security-awareness/8-ways-to-prevent-identity-theft"
+               target="_blank" rel="noreferrer">
+                Market Compliance</a>)
+            </li>
+            <li> For organizations, using strong passwords to secure staff accounts can stop a breach
+               from spreading throughout the network and protect confidential data.
+              (<a href="https://www.cm-alliance.com/cybersecurity-blog/why-strong-passwords-matter-and-how-to-create-them"
+               target="_blank" rel="noreferrer">
+                Cyber Management Alliance</a>)
+            </li>
+          </ul>
         </section>
 
         <section className="mod-section">

@@ -1,6 +1,4 @@
-/* ------------------------------------------------
-   Color & Font Variables
---------------------------------------------------- */
+/* color & font vars */
 :root {
   --cyber-blue: #00f3ff;
   --cyber-purple: #7b2dff;
@@ -11,9 +9,7 @@
   --font-family: "Orbitron", "Segoe UI", sans-serif;
 }
 
-/* ------------------------------------------------
-   Base Resets
---------------------------------------------------- */
+/* base resets */
 * {
   margin: 0;
   padding: 0;
@@ -27,9 +23,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ------------------------------------------------
-   Wrapper for Module Card
---------------------------------------------------- */
+/* wrapper for module card */
 .mod-wrapper {
   display: flex;
   justify-content: center;
@@ -37,9 +31,7 @@ body {
   width: 100%;
 }
 
-/* ------------------------------------------------
-   Cyber Panel (Template for module pages)
---------------------------------------------------- */
+/* cyber panel */
 .cyber-panel {
   background: rgba(26, 26, 46, 0.8);
   border-radius: 15px;
@@ -57,16 +49,12 @@ body {
   box-shadow: 0 10px 40px rgba(0, 243, 255, 0.1);
 }
 
-/* ------------------------------------------------
-   Module Card
---------------------------------------------------- */
+/* module card */
 .mod-card {
   margin: 0 auto;
 }
 
-/* ------------------------------------------------
-   Title (Large Gradient Text)
---------------------------------------------------- */
+/* title */
 .mod-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -77,9 +65,7 @@ body {
   text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
 }
 
-/* ------------------------------------------------
-   Section Headings & Text
---------------------------------------------------- */
+/* section headings & text */
 .mod-section {
   margin-bottom: 2rem;
   padding: 1rem;
@@ -96,14 +82,19 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.mod-subheading {
+  color: var(--cyber-blue);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
 .mod-text {
   line-height: 1.6;
   font-size: 1rem;
 }
 
-/* ------------------------------------------------
-   Cyber Button (Template Style for navigation)
---------------------------------------------------- */
+/* cyber button */
 .cyber-btn {
   padding: 15px 40px;
   font-size: 1rem;
@@ -132,9 +123,7 @@ body {
   margin-top: 1rem;
 }
 
-/* ------------------------------------------------
-   Password Form & Animation Layout
---------------------------------------------------- */
+/* password form & animation */
 .pwd-form {
   margin-top: 1rem;
 }
@@ -148,7 +137,8 @@ body {
 
 .inp-wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  width: 100%;
   gap: 0.5rem;
   flex: 1;
 }
@@ -166,9 +156,11 @@ body {
   color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   cursor: pointer;
   font-size: 0.9rem;
+  height: auto;
+  align-self: center;
 }
 
 .submit-anim-row {
@@ -186,9 +178,7 @@ body {
   justify-content: center;
 }
 
-/* ------------------------------------------------
-   Cyber Submit Button (Distinct from navigation buttons)
---------------------------------------------------- */
+/* cyber submit button */
 .cyber-submit-btn {
   position: relative;
   margin-top: 1rem;
@@ -235,17 +225,11 @@ body {
 }
 
 @keyframes glowShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
-/* ------------------------------------------------
-   Feedback Messages
---------------------------------------------------- */
+/* feedback messages */
 .valid-msg {
   color: var(--cyber-success);
   font-weight: bold;
@@ -264,9 +248,7 @@ body {
   padding-left: 1.5rem;
 }
 
-/* ------------------------------------------------
-   Module Navigation Buttons Container
---------------------------------------------------- */
+/* navigation container */
 .mod-btn-container {
   display: flex;
   justify-content: space-between;
@@ -276,9 +258,7 @@ body {
   float: right;
 }
 
-/* ------------------------------------------------
-   Module Header Styling
---------------------------------------------------- */
+/* module header */
 .mod-header {
   display: flex;
   justify-content: space-between;
@@ -301,9 +281,7 @@ body {
   justify-content: center;
 }
 
-/* ------------------------------------------------
-   Animation Container Styling
---------------------------------------------------- */
+/* animation container */
 .anim-container {
   width: 100%;
   margin: 1.5rem 0 2.5rem;
@@ -345,9 +323,7 @@ body {
   opacity: 1;
 }
 
-/* ------------------------------------------------
-   Case Study Section with Animation
---------------------------------------------------- */
+/* case study section */
 .mod-section.with-anim {
   display: flex;
   align-items: flex-start;
@@ -399,4 +375,51 @@ body {
     height: 178px;
     margin-top: 1rem;
   }
+}
+
+/* styling for embedded links */
+a {
+  color: #00b4d8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #90e0ef;
+  text-decoration: underline;
+}
+
+/* list styling */
+.mod-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.mod-list li {
+  position: relative;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  margin-bottom: 0.75rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-left: 3px solid #00b4d8;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.3s ease;
+}
+
+.mod-list li:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateX(5px);
+}
+
+.mod-list li::before {
+  content: "→";
+  position: absolute;
+  left: 1rem;
+  color: #00b4d8;
+  font-weight: bold;
+}
+
+.mod-list li:hover::before {
+  text-shadow: 0 0 8px rgba(0, 180, 216, 0.8);
 }
