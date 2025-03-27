@@ -10,7 +10,7 @@
           "Improved signal strength",
           "Reduced battery consumption"
         ],
-        "answer": "Data interception by attackers"
+        "correctAnswer": "Data interception by attackers"
       },
       {
         "question": "Which type of attack involves setting up a fraudulent Wi-Fi network to steal user data?",
@@ -20,7 +20,7 @@
           "Phishing Attack",
           "Brute Force Attack"
         ],
-        "answer": "Evil Twin Attack"
+        "correctAnswer": "Evil Twin Attack"
       },
       {
         "question": "How does a Man-in-the-Middle (MitM) attack compromise security?",
@@ -30,7 +30,7 @@
           "By flooding the network with excessive traffic",
           "By requiring two-factor authentication"
         ],
-        "answer": "By secretly intercepting and altering communication between devices"
+        "correctAnswer": "By secretly intercepting and altering communication between devices"
       },
       {
         "question": "Which security measure can help encrypt your internet traffic on public Wi-Fi networks?",
@@ -40,7 +40,7 @@
           "Reducing screen brightness",
           "Using incognito mode in a browser"
         ],
-        "answer": "Using a VPN"
+        "correctAnswer": "Using a VPN"
       },
       {
         "question": "What is a sign that you might be connected to an Evil Twin network?",
@@ -50,7 +50,7 @@
           "A requirement to accept new terms and conditions",
           "No need for a password to connect"
         ],
-        "answer": "A duplicate Wi-Fi network with the same name"
+        "correctAnswer": "A duplicate Wi-Fi network with the same name"
       },
       {
         "question": "Which website protocol indicates a secure connection?",
@@ -60,7 +60,7 @@
           "https://",
           "ws://"
         ],
-        "answer": "https://"
+        "correctAnswer": "https://"
       },
       {
         "question": "What is the role of a firewall in network security?",
@@ -70,7 +70,7 @@
           "To improve the speed of the network",
           "To disable all wireless connections"
         ],
-        "answer": "To monitor and block unauthorized connections"
+        "correctAnswer": "To monitor and block unauthorized connections"
       }
     ]
   }
