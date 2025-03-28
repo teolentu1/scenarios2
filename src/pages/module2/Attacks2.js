@@ -85,7 +85,7 @@ function Attacks2() {
                 (<a href="https://www.ncsc.gov.uk/collection/phishing-scams#"
                target="_blank" rel="noreferrer">
                 National Cyber Security Centre</a>)</li>
-              <li>A DDoS attack is when many devices flood a website or server with traffic, making it unavailable.
+              <li>DDoS Attack: An attack where many devices flood a website or server with traffic, making it unavailable.
                 (<a href="https://www.fortinet.com/resources/cyberglossary/ddos-attack"
                target="_blank" rel="noreferrer">
                 Fortinet</a>)
