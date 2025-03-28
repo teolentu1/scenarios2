@@ -248,17 +248,6 @@ const Protection1 = () => {
           </button>
         </Link>
       </div>
-
-      <footer className="resources-footer">
-        <div className="footer-content">
-          <h4>Resources used</h4>
-          <div className="footer-links">
-            <a href="https://www.cisa.gov/secure-connections" target="_blank" rel="noopener noreferrer">CISA Encryption Guide</a>
-            <a href="https://www.eff.org/https-everywhere" target="_blank" rel="noopener noreferrer">EFF Security Tools</a>
-            <a href="https://www.vpnmentor.com/privacy-guides/" target="_blank" rel="noopener noreferrer">VPN Security Research</a>
-          </div>
-        </div>
-      </footer>
     </motion.div>
   );
 };

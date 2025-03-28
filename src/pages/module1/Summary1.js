@@ -156,32 +156,19 @@ const Summary1 = () => {
             <h3>Password Security</h3>
             <p>Learn about strong authentication practices</p>
           </Link>
-          <a href="https://www.cisa.gov/secure-connections" target="_blank" rel="noopener noreferrer" className="step-card">
-            <div className="step-icon">🇺🇸</div>
-            <h3>CISA Guidelines</h3>
+          <a href="https://www.ncsc.gov.uk" target="_blank" rel="noopener noreferrer" className="step-card">
+            <div className="step-icon">🇬🇧</div>
+            <h3>National Cyber Security Centre</h3>
             <p>Official government security recommendations</p>
           </a>
         </div>
       </div>
 
-      <div className="navigation">
-        <Link to="/modules/unsecured-wifi/casestudies">
-          <motion.button
-            className="back-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            ← Review Case Studies
-          </motion.button>
-        </Link>
-        <Link to="/modules">
-          <motion.button
-            className="next-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Finish Module →
-          </motion.button>
+      <div className="centered-navigation">
+        <Link to="/">
+          <button className="next-button">
+            Back to Home
+          </button>
         </Link>
       </div>
     </motion.div>
