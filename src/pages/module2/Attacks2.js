@@ -75,9 +75,21 @@ function Attacks2() {
           </p><br></br>
             <p>Some examples of this include:</p>
             <ul className="mod-list">
-              <li>Viruses</li>
-              <li>Ransomware</li>
-              <li>DDoS attacks</li>
+              <li>Viruses: A software that spreads between computers and causes data damage.
+                (<a href="https://www.fortinet.com/resources/cyberglossary/computer-virus"
+               target="_blank" rel="noreferrer">
+                Fortinet</a>)
+              </li>
+              <li>Phishing Attacks: An attack where cybercriminals use deceptive techniques to get sensitive data 
+                from users like passwords.
+                (<a href="https://www.ncsc.gov.uk/collection/phishing-scams#"
+               target="_blank" rel="noreferrer">
+                National Cyber Security Centre</a>)</li>
+              <li>A DDoS attack is when many devices flood a website or server with traffic, making it unavailable.
+                (<a href="https://www.fortinet.com/resources/cyberglossary/ddos-attack"
+               target="_blank" rel="noreferrer">
+                Fortinet</a>)
+              </li>
             </ul>  
           </div>
         </section>

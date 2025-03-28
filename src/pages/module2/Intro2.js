@@ -65,18 +65,6 @@ function Intro2() {
           </ul>
         </section>
 
-        <section className="mod-section">
-          <h2 className="mod-heading">Example:</h2>
-          <p className="mod-text">
-            To put the risks into perspective, consider a simple digit-only password. Even with a modest length, 
-            such passwords can be rapidly guessed using automated tools. For example, a basic four-digit PIN 
-            has only 10,000 possible combinations. Modern computers can cycle through these combinations in a 
-            matter of seconds, exposing just how vulnerable such simplistic passwords can be. This example 
-            highlights the necessity of incorporating letters, numbers, and symbols to create passwords that 
-            are both long and complex, thereby enhancing overall security.
-          </p>
-        </section>
-
         <Link to="/modules/password-security/attacks">
           <motion.button
             className="cyber-btn mod-btn right-btn"

@@ -1,4 +1,3 @@
-/* color & font vars */
 :root {
   --cyber-blue: #00f3ff;
   --cyber-purple: #7b2dff;
@@ -9,7 +8,7 @@
   --font-family: "Orbitron", "Segoe UI", sans-serif;
 }
 
-/* base resets */
+/* base reset */
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +22,7 @@ body {
   overflow-x: hidden;
 }
 
-/* wrapper for module card */
+/* wrapper */
 .mod-wrapper {
   display: flex;
   justify-content: center;
@@ -31,7 +30,7 @@ body {
   width: 100%;
 }
 
-/* cyber panel */
+/* panel */
 .cyber-panel {
   background: rgba(26, 26, 46, 0.8);
   border-radius: 15px;
@@ -49,7 +48,7 @@ body {
   box-shadow: 0 10px 40px rgba(0, 243, 255, 0.1);
 }
 
-/* module card */
+/* card */
 .mod-card {
   margin: 0 auto;
 }
@@ -65,7 +64,7 @@ body {
   text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
 }
 
-/* section headings & text */
+/* sections */
 .mod-section {
   margin-bottom: 2rem;
   padding: 1rem;
@@ -94,7 +93,7 @@ body {
   font-size: 1rem;
 }
 
-/* cyber button */
+/* button */
 .cyber-btn {
   padding: 15px 40px;
   font-size: 1rem;
@@ -123,7 +122,7 @@ body {
   margin-top: 1rem;
 }
 
-/* password form & animation */
+/* form */
 .pwd-form {
   margin-top: 1rem;
 }
@@ -178,7 +177,7 @@ body {
   justify-content: center;
 }
 
-/* cyber submit button */
+/* submit button */
 .cyber-submit-btn {
   position: relative;
   margin-top: 1rem;
@@ -220,16 +219,16 @@ body {
   height: 100%;
   background: linear-gradient(45deg, rgba(0, 255, 157, 0) 0%, rgba(0, 255, 157, 0.3) 50%, rgba(0, 255, 157, 0) 100%);
   background-size: 200% 100%;
-  animation: glowShift 3s infinite linear;
+  animation: glowshift 3s infinite linear;
   z-index: 1;
 }
 
-@keyframes glowShift {
+@keyframes glowshift {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
 
-/* feedback messages */
+/* messages */
 .valid-msg {
   color: var(--cyber-success);
   font-weight: bold;
@@ -248,7 +247,6 @@ body {
   padding-left: 1.5rem;
 }
 
-/* navigation container */
 .mod-btn-container {
   display: flex;
   justify-content: space-between;
@@ -258,7 +256,6 @@ body {
   float: right;
 }
 
-/* module header */
 .mod-header {
   display: flex;
   justify-content: space-between;
@@ -281,7 +278,6 @@ body {
   justify-content: center;
 }
 
-/* animation container */
 .anim-container {
   width: 100%;
   margin: 1.5rem 0 2.5rem;
@@ -323,7 +319,6 @@ body {
   opacity: 1;
 }
 
-/* case study section */
 .mod-section.with-anim {
   display: flex;
   align-items: flex-start;
@@ -377,7 +372,6 @@ body {
   }
 }
 
-/* styling for embedded links */
 a {
   color: #00b4d8;
   text-decoration: none;
@@ -390,7 +384,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* list styling */
 .mod-list {
   list-style: none;
   padding: 0;
@@ -409,7 +402,7 @@ a:hover {
 
 .mod-list li:hover {
   background: rgba(0, 0, 0, 0.2);
-  transform: translateX(5px);
+  transform: translatex(5px);
 }
 
 .mod-list li::before {
@@ -422,4 +415,188 @@ a:hover {
 
 .mod-list li:hover::before {
   text-shadow: 0 0 8px rgba(0, 180, 216, 0.8);
+}
+
+.mod-ordered-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  counter-reset: item;
+}
+
+.mod-ordered-list li {
+  position: relative;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  margin-bottom: 0.75rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-left: 3px solid #00b4d8;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.3s ease;
+}
+
+.mod-ordered-list li:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: translatex(5px);
+}
+
+.mod-ordered-list li::before {
+  content: counter(item);
+  counter-increment: item;
+  position: absolute;
+  left: 1rem;
+  color: #00b4d8;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mod-ordered-list li:hover::before {
+  text-shadow: 0 0 8px rgba(0, 180, 216, 0.8);
+}
+
+.list-subheading {
+  color: var(--cyber-blue);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.clickable-heading {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+}
+
+.clickable-heading:hover {
+  color: var(--cyber-blue);
+  text-shadow: 0 0 5px rgba(0, 243, 255, 0.3);
+}
+
+.clickable-heading::after {
+  content: '';
+  font-size: 0.8em;
+  color: var(--cyber-blue);
+}
+
+.click-prompt {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+}
+
+.cyber-blue-text {
+  color: var(--cyber-blue);
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.summary-sec {
+  background: rgba(0, 243, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: background 0.3s ease;
+}
+
+.summary-sec:hover {
+  background: rgba(0, 243, 255, 0.1);
+}
+
+.summary-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.summary-section {
+  flex: 1;
+  min-width: 250px;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-section:hover {
+  transform: translatey(-3px);
+  box-shadow: 0 4px 10px rgba(0, 243, 255, 0.2);
+}
+
+.password-strength {
+  background: linear-gradient(135deg, var(--cyber-blue), var(--cyber-purple));
+}
+
+.risks {
+  background: linear-gradient(135deg, var(--cyber-danger), var(--cyber-purple));
+}
+
+.best-practices {
+  background: linear-gradient(135deg, var(--cyber-success), var(--cyber-blue));
+}
+
+.flashcard-container {
+  perspective: 1000px;
+  flex: 1;
+  min-width: 300px;
+  height: 220px;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.flashcard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-front {
+  background: linear-gradient(135deg, var(--cyber-blue), var(--cyber-purple));
+  color: #fff;
+}
+
+.card-back {
+  background: linear-gradient(135deg, var(--cyber-success), var(--cyber-blue));
+  color: #fff;
+  transform: rotatey(180deg);
+}
+
+.flashcard-container.dark .card-front {
+  background: linear-gradient(135deg, #333, #555);
+}
+
+.flashcard-container.dark .card-back {
+  background: linear-gradient(135deg, #444, #666);
+}
+
+.summary-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
 }

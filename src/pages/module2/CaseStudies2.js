@@ -34,8 +34,13 @@ function CaseStudies2() {
           <div className="sect-content">
             <h2 className="mod-heading">Case Study 1: "password123" Dilemma</h2>
             <p className="mod-text">
-              Many people, including grandparents and even kids, sometimes choose very simple passwords like "password123". In one case, an elderly man used this common password for his online accounts, and it was quickly guessed by someone trying to steal his personal information. This shows that a password that seems easy to remember can also be easy for others to guess.
-            </p>
+              Many people, including grandparents and even kids, sometimes choose very simple passwords like "password123".
+            </p><br></br>
+            <p className="mod-text">
+              For example, let's say an elderly man used this common password for his online accounts. It would be quick and easy for 
+              a hacker to guess.
+            </p><br></br>
+            <p><strong>This shows that a password that seems easy to remember can also be easy for others to guess.</strong></p>
           </div>
           <div className="sect-anim">
             <Lottie
@@ -56,7 +61,16 @@ function CaseStudies2() {
           <div className="sect-content">
             <h2 className="mod-heading">Case Study 2: Birthday Passwords</h2>
             <p className="mod-text">
-              It is common for families to use important dates, like birthdays, as passwords because they are easy to remember. However, these dates are often predictable. For example, a mother used her child's birthday as her email password, and it was soon discovered by someone who knew the family well. This example reminds us that even though a birthday is special, it does not make a strong password.
+            It is common practice for families to use birthdays as their passwords. Although it seems 
+            like it'd be a secure password, it actually isn't.
+            </p><br></br>
+            <p className="mod-text">
+            Take the example of a mother who named her password after the name of her child, and 
+            someone who knew the family well was able to uncover what it was.
+            </p><br></br>
+            <p><strong>
+              This example reminds us that even though a birthday is special, it does not make a strong password.
+            </strong>
             </p>
           </div>
           <div className="sect-anim">
@@ -78,7 +92,16 @@ function CaseStudies2() {
           <div className="sect-content">
             <h2 className="mod-heading">Case Study 3: Shared Family Passwords</h2>
             <p className="mod-text">
-              In some families, everyone uses the same simple password for convenience—especially among older adults who might find it hard to remember many different passwords. In one community, several neighbors shared a common password for their online services, and when that password was guessed, many accounts were at risk. This case shows that sharing a weak password can put multiple people in danger.
+            In some families, everyone uses the same simple password for convenience—especially among older 
+            adults who might find it hard to remember many different passwords.
+            </p><br></br>
+            <p className="mod-text">
+            Additionally, in a community, several neighbors may share a common password for their online 
+            services, and when that password gets guessed, many accounts became at risk.
+            </p><br></br>
+            <p><strong>
+            This case shows that sharing a weak password can put multiple people in danger.
+            </strong>
             </p>
           </div>
           <div className="sect-anim">
