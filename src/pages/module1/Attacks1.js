@@ -109,12 +109,12 @@ const Attacks1 = () => {
             className={`attack-card ${flippedCards[attack.id] ? 'flipped' : ''}`}
             onClick={() => toggleCard(attack.id)}
           >
-            <div className="card-front">
+            <div className="card1-front">
               <div className="attack-icon">{attack.icon}</div>
               <h3>{attack.title}</h3>
               <button className="flip-button">View Details →</button>
             </div>
-            <div className="card-back">
+            <div className="card1-back">
               <h3>{attack.title}</h3>
               <p className="definition">{attack.definition}</p>
               <div className="examples">

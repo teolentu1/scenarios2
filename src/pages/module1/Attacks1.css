@@ -18,6 +18,7 @@
     overflow-x: hidden;
     max-width: 1200px;
     margin: 0 auto;
+    
   }
   
   .cyber-grid-overlay {
@@ -66,7 +67,7 @@
   }
   
   .attack-card {
-    background: rgba(26, 26, 46, 0.8);
+    background: var(--cyber-dark); 
     border-radius: 15px;
     padding: 2rem;
     min-height: 300px;
@@ -76,13 +77,13 @@
     transform-style: preserve-3d;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(0, 243, 255, 0.1);
-  }
+}
   
   .attack-card:hover {
     box-shadow: 0 10px 40px rgba(0, 243, 255, 0.2);
-  }
+  }  
   
-  .card-front, .card-back {
+  .card1-front, .card1-back {
     backface-visibility: hidden;
     position: absolute;
     top: 0;
@@ -94,7 +95,7 @@
     flex-direction: column;
   }
   
-  .card-back {
+  .card1-back {
     transform: rotateY(180deg);
   }
   
