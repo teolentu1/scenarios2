@@ -95,69 +95,6 @@ const CaseStudies1 = () => {
         ))}
       </div>
 
-      <div className="security-tips">
-        <h2>Protective Measures Learned</h2>
-        <div className="tips-grid">
-          <div className="tip-card">
-            <div className="tip-icon">🔒</div>
-            <h3>Always Use VPN</h3>
-            <p>Encrypt all traffic on public networks with a reputable VPN service</p>
-          </div>
-          <div className="tip-card">
-            <div className="tip-icon">🌐</div>
-            <h3>Verify Networks</h3>
-            <p>Confirm WiFi names with staff and watch for duplicate networks</p>
-          </div>
-          <div className="tip-card">
-            <div className="tip-icon">💳</div>
-            <h3>Avoid Sensitive Transactions</h3>
-            <p>Never access banking or enter passwords on public WiFi without VPN</p>
-          </div>
-          <div className="tip-card">
-            <div className="tip-icon">🔄</div>
-            <h3>Keep Devices Updated</h3>
-            <p>Ensure your OS and security software have the latest patches</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="navigation">
-        <Link to="/modules/unsecured-wifi/protection">
-          <motion.button
-            className="back-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            ← Back to Protection
-          </motion.button>
-        </Link>
-        <Link to="/">
-          <motion.button
-            className="next-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Finish Module →
-          </motion.button>
-        </Link>
-      </div>
-
-      <div className="navigation">
-        <Link to="/modules/unsecured-wifi/protection">
-          <button 
-            className="back-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}>
-            ← Back to Protection
-          </button>
-        </Link>
-        <Link to="/modules/unsecured-wifi/summary">
-          <button className="next-button">
-            Summary →
-          </button>
-        </Link>
-      </div>
-
       <div className="centered-navigation">
         <Link to="/modules/unsecured-wifi/summary">
           <button className="next-button">
@@ -166,14 +103,6 @@ const CaseStudies1 = () => {
         </Link>
       </div>
 
-      <footer className="resources-footer">
-        <h4>Additional Resources</h4>
-        <div className="footer-links">
-          <a href="https://www.kaspersky.com/resource-center/preemptive-safety/public-wifi-risks" target="_blank" rel="noopener noreferrer">Kaspersky WiFi Risks</a>
-          <a href="https://www.fbi.gov/scams-and-safety/common-scams-and-crimes/public-wifi-networks" target="_blank" rel="noopener noreferrer">FBI WiFi Warning</a>
-          <a href="https://www.consumer.ftc.gov/articles/how-protect-your-personal-information-public-wi-fi-networks" target="_blank" rel="noopener noreferrer">FTC Protection Guide</a>
-        </div>
-      </footer>
     </motion.div>
   );
 };

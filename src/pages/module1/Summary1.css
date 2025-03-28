@@ -160,6 +160,8 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    position: relative;
+    z-index: 5;
   }
   
   .step-card {
@@ -170,6 +172,9 @@
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 10; 
+    pointer-events: auto;
   }
   
   .step-card:hover {
@@ -182,31 +187,30 @@
     margin-bottom: 1rem;
   }
   
-  .navigation {
+  .centered-navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 3rem 0;
+    position: relative;
+    z-index: 2;
   }
   
-  .back-button,
   .next-button {
-    padding: 1rem 2rem;
-    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
     font-weight: bold;
-    cursor: pointer;
-    font-size: 1rem;
+    color: black;
+    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
     border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
     transition: all 0.3s ease;
   }
   
-  .back-button {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-  }
-  
-  .next-button {
-    background: linear-gradient(90deg, var(--cyber-blue), var(--cyber-purple));
-    color: black;
+  .next-button:hover {
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+    transform: translateY(-2px);
   }
   
   @keyframes gridScroll {
