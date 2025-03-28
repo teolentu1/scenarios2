@@ -284,6 +284,42 @@
     border: 1px solid rgba(0, 255, 157, 0.2);
     box-shadow: 0 4px 15px rgba(0, 243, 255, 0.1);
   }
+
+  .next-steps {
+    margin-bottom: 3rem;
+  }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 5;
+  }
+  
+  .step-card {
+    background: rgba(0, 243, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10; 
+    pointer-events: auto;
+  }
+  
+  .step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 243, 255, 0.1);
+  }
+  
+  .step-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
   
   .mod-btn-container {
     display: flex;

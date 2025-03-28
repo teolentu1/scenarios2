@@ -151,6 +151,22 @@ const Summary2 = () => {
         </motion.div>
       </div>
 
+      <div className="next-steps">
+        <h2>Continue Your Learning</h2>
+        <div className="steps-grid">
+          <Link to="/modules/unsecured-wifi" className="step-card">
+            <div className="step-icon">🔑</div>
+            <h3>Unsecure WiFi Networks</h3>
+            <p>Learn about the dangers of unsecured WiFi networks and how to protect yourself</p>
+          </Link>
+          <a href="https://www.ncsc.gov.uk" target="_blank" rel="noopener noreferrer" className="step-card">
+            <div className="step-icon">🇬🇧</div>
+            <h3>National Cyber Security Centre</h3>
+            <p>Official government security recommendations</p>
+          </a>
+        </div>
+      </div>
+
       <div className="mod-btn-container">
         <Link to="/modules/password-security/casestudies">
           <motion.button
